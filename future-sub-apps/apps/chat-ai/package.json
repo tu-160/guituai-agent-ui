@@ -1,0 +1,60 @@
+{
+  "name": "@future/chat-ai",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "imports": {
+    "#/*": "./src/*",
+    "@/*": "./src/*"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "catalog:",
+    "@future-core/icons": "workspace:*",
+    "@future-core/shadcn-ui": "workspace:*",
+    "@future-core/shared": "workspace:*",
+    "@future-core/typings": "workspace:*",
+    "@future/apis": "workspace:^",
+    "@future/styles": "workspace:^",
+    "@future/types": "workspace:^",
+    "@future/ui": "workspace:^",
+    "@future/utils": "workspace:*",
+    "@logicflow/core": "catalog:",
+    "@logicflow/extension": "catalog:",
+    "@logicflow/vue-node-registry": "catalog:",
+    "@radix-icons/vue": "catalog:",
+    "@types/lodash-es": "catalog:",
+    "@vueuse/core": "catalog:",
+    "ant-design-vue": "catalog:",
+    "class-variance-authority": "catalog:",
+    "clsx": "catalog:",
+    "crypto-js": "^4.2.0",
+    "date-fns": "catalog:",
+    "human-id": "^4.1.1",
+    "less": "catalog:",
+    "lodash-es": "catalog:",
+    "lucide-vue-next": "catalog:",
+    "pinia": "catalog:",
+    "pinia-plugin-persistedstate": "catalog:",
+    "radix-vue": "catalog:",
+    "tailwind-merge": "catalog:",
+    "tailwindcss-animate": "catalog:",
+    "vue-i18n": "^11.0.0-rc.1",
+    "@intlify/vue-i18n-loader": "^5.0.0",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
+  },
+  "devDependencies": {
+    "@future/tailwind-config": "workspace:*",
+    "@types/crypto-js": "^4.2.2",
+    "@types/marked": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "@vitejs/plugin-vue-jsx": "catalog:",
+    "highlight.js": "catalog:",
+    "marked": "catalog:"
+  }
+}

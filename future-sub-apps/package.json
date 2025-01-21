@@ -1,0 +1,79 @@
+{
+  "name": "future-sub-apps",
+  "version": "1.0.0",
+  "private": true,
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "scripts": {
+    "dev": "turbo-run dev",
+    "dev:aip": "pnpm -F@future/ai-platform run dev",
+    "dev:kl": "pnpm -F@future/knowledge run dev",
+    "clean": "node ./scripts/clean.mjs",
+    "postinstall": "pnpm -r run stub --if-present",
+    "prepare": "cd .. && husky future-sub-apps/.husky"
+  },
+  "devDependencies": {
+    "@ant-design/icons-vue": "catalog:",
+    "@changesets/changelog-github": "catalog:",
+    "@changesets/cli": "catalog:",
+    "@future/commitlint-config": "workspace:*",
+    "@future/eslint-config": "workspace:*",
+    "@future/prettier-config": "workspace:*",
+    "@future/stylelint-config": "workspace:*",
+    "@future/tailwind-config": "workspace:*",
+    "@future/tsconfig": "workspace:*",
+    "@future/turbo-run": "workspace:*",
+    "@future/vite-config": "workspace:*",
+    "@playwright/test": "catalog:",
+    "@types/node": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "@vitejs/plugin-vue-jsx": "catalog:",
+    "@vue/test-utils": "catalog:",
+    "autoprefixer": "catalog:",
+    "cross-env": "catalog:",
+    "cspell": "catalog:",
+    "happy-dom": "catalog:",
+    "husky": "catalog:",
+    "is-ci": "catalog:",
+    "lint-staged": "catalog:",
+    "playwright": "catalog:",
+    "prettier-plugin-tailwindcss": "catalog:",
+    "rimraf": "catalog:",
+    "tailwindcss": "catalog:",
+    "turbo": "catalog:",
+    "typescript": "catalog:",
+    "unbuild": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:",
+    "vue": "catalog:",
+    "vue-tsc": "catalog:"
+  },
+  "engines": {
+    "node": ">=20.10.0",
+    "pnpm": ">=9.5.0"
+  },
+  "packageManager": "pnpm@9.12.1",
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "eslint": "*"
+      }
+    },
+    "overrides": {
+      "@ctrl/tinycolor": "catalog:",
+      "clsx": "catalog:",
+      "pinia": "catalog:",
+      "vue": "catalog:"
+    },
+    "neverBuiltDependencies": [
+      "canvas",
+      "node-gyp"
+    ]
+  },
+  "eslintConfig": {
+    "root": true
+  },
+  "root": true
+}

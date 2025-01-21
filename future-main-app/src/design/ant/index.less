@@ -1,0 +1,158 @@
+@import './pagination.less';
+@import './input.less';
+@import './btn.less';
+@import './table.less';
+
+html[data-theme='light'] {
+  .ant-drawer {
+    .ant-drawer-header {
+      border-bottom: unset !important;
+    }
+  }
+  .ant-modal {
+    .ant-modal-header {
+      border-bottom: unset !important;
+    }
+    .ant-modal-footer {
+      padding: 12px 16px;
+    }
+  }
+}
+
+.ant-image-preview-root {
+  img {
+    display: unset;
+  }
+}
+
+.ant-back-top {
+  right: 20px;
+  bottom: 20px;
+}
+
+.collapse-container__body {
+  > .ant-descriptions {
+    margin-left: 6px;
+  }
+}
+
+.ant-image-preview-operations {
+  background-color: rgb(0 0 0 / 30%);
+}
+
+.ant-popover {
+  &-content {
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+  }
+}
+
+// =================================
+// ==============modal message======
+// =================================
+.modal-icon-warning {
+  color: @warning-color !important;
+}
+
+.modal-icon-success {
+  color: @success-color !important;
+}
+
+.modal-icon-error {
+  color: @error-color !important;
+}
+
+.modal-icon-info {
+  color: @primary-color !important;
+}
+
+.ant-form-item-control-input-content {
+  > div {
+    > div {
+      max-width: 100%;
+    }
+  }
+  .ant-picker {
+    width: 100%;
+  }
+}
+.ant-form {
+  .ant-form-item {
+    margin-bottom: 20px;
+    .ant-form-item-explain {
+      height: 0;
+    }
+    &.ant-form-item-with-help {
+      .ant-form-item-explain {
+        height: 20px;
+        line-height: 20px;
+        min-height: 20px;
+      }
+    }
+  }
+}
+.ant-steps {
+  &.ant-steps-small {
+    .ant-steps-item-icon {
+      line-height: 22px;
+    }
+  }
+  .ant-steps-item-custom .ant-steps-item-container .ant-steps-item-icon {
+    height: 32px;
+    .custom-icon {
+      font-size: 20px;
+      vertical-align: top;
+      line-height: 32px;
+    }
+  }
+}
+.ant-table-cell {
+  & > .ant-rate {
+    white-space: normal;
+  }
+  &[style*='text-align: right'] {
+    .future-sign {
+      justify-content: flex-end;
+    }
+  }
+  &[style*='text-align: center'] {
+    .future-sign {
+      justify-content: center;
+    }
+  }
+}
+
+.ant-dropdown-trigger > .anticon.anticon-down,
+.ant-dropdown-link > .anticon.anticon-down,
+.ant-dropdown-button > .anticon.anticon-down {
+  font-size: 12px;
+  vertical-align: middle;
+}
+// /** 下拉菜单文字和图标折叠了 */
+.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-title-content,
+.ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-title-content {
+  flex: auto;
+  white-space: nowrap;
+}
+.ant-popover .ant-popover-title {
+  font-weight: 500;
+}
+.ant-tree-select-dropdown .ant-select-tree .ant-select-tree-checkbox {
+  margin-block-start: 0 !important;
+}
+
+.ant-drawer {
+  .ant-drawer-header {
+    background-color: @app-content-background !important;
+  }
+}
+.ant-modal {
+  .ant-modal-header {
+    background-color: @app-content-background !important;
+  }
+}
+.ant-checkbox-group {
+  .ant-checkbox + span {
+    word-break: break-all;
+    white-space: pre-wrap;
+  }
+}

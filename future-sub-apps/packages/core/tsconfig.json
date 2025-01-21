@@ -1,0 +1,17 @@
+{
+  // "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "#/*": ["types/*"]
+    }
+
+    // "typeRoots": ["../../types", "../../node_modules/@types"]
+  },
+  // 编译的文件列表
+  "include": ["**/*.ts", "**/*.tsx", "**/*.vue"],
+  "exclude": ["**/__tests__/**", "**/tests/**", "**/dist", "**/node_modules/**"]
+}

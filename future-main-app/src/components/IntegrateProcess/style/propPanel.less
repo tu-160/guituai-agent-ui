@@ -1,0 +1,145 @@
+.propPanel-drawer {
+  .config-form {
+    .ant-form-item {
+      margin-bottom: 12px;
+    }
+    & > .ant-form-item {
+      &.normal-item-content {
+        & > .ant-form-item-row > .ant-form-item-control {
+          padding: 0;
+        }
+      }
+      & > .ant-form-item-row > .ant-form-item-label {
+        font-weight: 600;
+      }
+      & > .ant-form-item-row > .ant-form-item-control {
+        padding: 0 10px;
+      }
+    }
+  }
+  .common-pane {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+    &.condition-pane {
+      .config-content {
+        padding: 10px;
+        &.condition-content {
+          padding: 0;
+          .condition-main {
+            padding: 10px;
+          }
+        }
+      }
+    }
+    .pane-tabs {
+      flex-shrink: 0;
+      .ant-tabs-nav {
+        margin-bottom: 0;
+        padding-left: 20px;
+        .ant-tabs-tab + .ant-tabs-tab {
+          margin-left: 40px;
+        }
+      }
+    }
+    .config-content {
+      flex: 1;
+      padding: 10px 20px;
+    }
+  }
+  .btn-cell {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    .ant-checkbox-wrapper {
+      width: 80px;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+    &:last-child {
+      margin-bottom: unset;
+    }
+  }
+  .parameter-box {
+    display: block;
+    min-width: 0;
+    width: 154px;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .type-radio {
+    .ant-radio-wrapper {
+      width: calc(25% - 8px);
+      line-height: 32px;
+    }
+  }
+  .counterSign-radio {
+    .ant-radio-wrapper {
+      width: 100%;
+      line-height: 32px;
+      margin-right: 0;
+    }
+  }
+  .common-radio {
+    .ant-radio-wrapper {
+      line-height: 32px;
+    }
+  }
+  .common-tip {
+    color: @text-color-secondary;
+    font-size: 14px;
+    line-height: 1;
+  }
+  .ant-input-group.ant-input-group-compact > *:not(:last-child) {
+    border-right-width: 0;
+  }
+  .hand input {
+    cursor: pointer;
+  }
+  .countersign-cell {
+    display: flex;
+    align-items: center;
+  }
+}
+.ant-modal.rule-modal {
+  .ant-modal-body > .scrollbar {
+    padding: 0 !important;
+  }
+  .node-tabs {
+    .ant-tabs-nav {
+      margin-bottom: 10px;
+    }
+    .ant-tabs-nav-wrap {
+      padding: 0 20px;
+    }
+    .ant-tabs-tabpane {
+      min-height: 300px !important;
+      max-height: 500px !important;
+      padding: 0 10px 10px;
+      overflow: auto;
+    }
+    .rule-cell {
+      line-height: 32px;
+      &.mid {
+        text-align: center;
+        color: @primary-color;
+      }
+    }
+    .icon-ym-nav-close {
+      font-size: 12px;
+    }
+    .common-tip {
+      color: @text-color-secondary;
+      font-size: 14px;
+      line-height: 30px;
+    }
+  }
+}

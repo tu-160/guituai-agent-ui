@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@future/tsconfig/web-app.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "#/*": ["./src/*"]
+    }
+  },
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.vue"],
+  "exclude": [
+    "node_modules",
+    "tests/server/**/*.ts",
+    "dist",
+    "**/*.js",
+    "**/dist",
+    "**/__tests__/**/*",
+    "**/gulpfile.ts",
+    "**/test-helper",
+    "packages/test-utils",
+    "**/*.md"
+  ]
+}

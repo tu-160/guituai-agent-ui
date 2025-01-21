@@ -1,0 +1,17 @@
+{
+  "name": "@future/ui",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": "index.ts",
+  "dependencies": {
+    "@ant-design/icons-vue": "catalog:",
+    "ant-design-vue": "catalog:"
+  }
+}

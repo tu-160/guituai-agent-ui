@@ -1,0 +1,404 @@
+@prefix-cls: ~'@{namespace}-print-designer';
+
+html[data-theme='dark'] {
+  .@{prefix-cls} {
+    .flex-row {
+      .center-side {
+        #hiprintPrintTemplate {
+          background-color: #fff;
+          color: #333;
+        }
+        // 滚动条右下角的三角形颜色
+        ::-webkit-scrollbar-corner {
+          background-color: #fff;
+        }
+      }
+      .right-side {
+        #PrintElementOptionSetting {
+          .prop-tabs .prop-tab-items .prop-tab-item span {
+            color: rgba(255, 255, 255, 0.85);
+          }
+          .hiprint-option-items .hiprint-option-item .hiprint-option-item-label {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.@{prefix-cls} {
+  height: 100%;
+  display: flex;
+
+  &__body {
+    flex: 1;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+  }
+  .design-wrap {
+    width: 100%;
+    height: calc(100%);
+  }
+
+  .flex-row {
+    height: calc(100%);
+    display: flex;
+    overflow: hidden;
+
+    .left-side {
+      max-width: 250px;
+      min-width: 250px;
+      height: calc(100%);
+      background: @component-background;
+      border-radius: 8px;
+
+      .tabs-content {
+        height: calc(100% - 42px);
+        user-select: none;
+        .components-list {
+          .components-list-title {
+            font-weight: 600;
+            .title-tip {
+              font-size: 12px;
+              color: #999;
+              margin-left: 4px;
+              font-weight: normal;
+            }
+          }
+          .ant-collapse-content-box {
+            padding: 0 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+          }
+          .components-draggable {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+          }
+          .components-item {
+            width: 110px;
+            margin-bottom: 10px;
+            transition: transform 0ms !important;
+            &.disabled {
+              .components-body {
+                cursor: not-allowed;
+                color: @text-color-secondary;
+                &:hover {
+                  color: @text-color-secondary;
+                  border-color: @border-color-base;
+                }
+              }
+            }
+            &.ep-click-item .components-body {
+              cursor: pointer;
+            }
+            .components-body {
+              padding-left: 8px;
+              font-size: 12px;
+              height: 36px;
+              cursor: move;
+              border: 1px solid @border-color-base;
+              border-radius: var(--border-radius);
+              line-height: 34px;
+              display: flex;
+              align-items: center;
+              color: @text-color;
+              i {
+                line-height: 16px;
+                height: 16px;
+                margin-right: 4px;
+              }
+              &:hover {
+                border: 1px solid @primary-color;
+                color: @primary-color;
+              }
+            }
+          }
+        }
+        .dataSet-content {
+          height: 100%;
+          .dataSet-content-header {
+            height: 50px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid @border-color-base1;
+            font-size: 16px;
+          }
+          .dataSet-content-main {
+            height: calc(100% - 50px);
+          }
+        }
+      }
+    }
+
+    .center-side {
+      background: @component-background;
+      flex: 1;
+      min-width: 800px;
+      overflow: hidden;
+      margin: 0 10px;
+      border-radius: 8px;
+      box-sizing: border-box;
+      position: relative;
+
+      .center-side-tool-wrap {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid @border-color-base1;
+
+        .left-handle-tool-wrap {
+          display: flex;
+        }
+
+        .right-handle-tool-wrap {
+          display: flex;
+          margin-left: 10px;
+
+          .action-bar-btn {
+            margin-left: 10px;
+            padding: 0 4px !important;
+          }
+        }
+      }
+
+      .size-tool-wrap {
+        margin: 0 10px;
+        button {
+          padding: 0;
+          width: 32px;
+        }
+        .custom-size-button {
+          width: auto !important;
+          padding: 0 8px;
+        }
+      }
+
+      .scale-tool-wrap {
+        .scale-value-input {
+          width: 60px !important;
+          input {
+            text-align: center;
+          }
+        }
+      }
+
+      #hiprintPrintTemplate {
+        height: calc(100% - 53px);
+        padding: 15px 10px 10px 15px;
+        box-sizing: border-box;
+        overflow: auto;
+      }
+      .draggable-box {
+        position: absolute;
+        width: 100%;
+        height: calc(100% - 53px);
+        top: 53px;
+        left: 0;
+        z-index: 100;
+      }
+    }
+
+    .right-side {
+      max-width: 300px;
+      min-width: 300px;
+      background: @component-background;
+      height: calc(100%);
+      overflow-x: hidden;
+      overflow-y: auto;
+      border-radius: 8px;
+
+      .prop-tabs {
+        background: @component-background !important;
+        .prop-tab-items {
+          padding: 0;
+          height: 42px;
+          border-bottom: 1px solid @border-color-base1;
+          display: flex;
+          .prop-tab-item {
+            background: @component-background !important;
+            flex: 1;
+            height: 42px;
+            line-height: 42px;
+            text-align: center;
+            span {
+              font-size: 14px;
+              font-weight: normal;
+            }
+            &.active {
+              border-bottom: 2px solid @primary-color;
+              span {
+                color: @primary-color;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+        .hiprint-option-items {
+          background: @component-background !important;
+          padding: 10px 5px;
+          .minicolors {
+            width: 100% !important;
+          }
+        }
+      }
+
+      .hiprint-option-items {
+        .hiprint-option-item {
+          width: 100%;
+          box-sizing: border-box;
+          margin-bottom: 18px;
+
+          .hiprint-option-item-label {
+            margin: 0 0 2px 0;
+            padding: 0;
+            font-size: 14px;
+          }
+
+          .hiprint-option-item-field {
+            & > select,
+            & > input[type='text'],
+            & > input[type='number'],
+            & > textarea {
+              background: @component-background !important;
+              padding: 0 16px 0 6px;
+              border: 1px solid @border-color-base;
+              height: 32px;
+              border-radius: 2px;
+              outline: none;
+              font-size: 14px;
+              box-sizing: border-box;
+
+              &:hover {
+                border-color: @primary-color;
+              }
+            }
+
+            & > textarea {
+              display: block;
+            }
+
+            & > input[type='range'] {
+              &:hover {
+                box-shadow: none;
+              }
+            }
+
+            & > input[type='checkbox'] {
+              border: 1px solid @border-color-base;
+
+              &:hover {
+                border-color: @primary-color;
+              }
+            }
+
+            .minicolors {
+              width: 75%;
+
+              .minicolors-input {
+                width: 100% !important;
+                padding: 0 16px 0 30px;
+                border: 1px solid @border-color-base;
+                height: 32px;
+                border-radius: 2px;
+                outline: none;
+                font-size: 14px;
+                box-sizing: border-box;
+
+                &:hover {
+                  border-color: @primary-color;
+                }
+              }
+              .minicolors-swatch {
+                top: 8px;
+                left: 8px;
+              }
+            }
+          }
+
+          .hiprint-option-table-selected-item {
+            .hi-pretty {
+              transform: translateY(-1px);
+            }
+          }
+        }
+
+        .hiprint-option-item-settingBtn {
+          border-color: @primary-color;
+          background: @primary-color;
+          width: 77px;
+          height: 32px;
+          color: #fff;
+          text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+          font-size: 14px;
+          border-radius: 2px;
+          transform: translateY(-1px);
+        }
+
+        .hiprint-option-item-submitBtn {
+          margin: 0 5px;
+          width: 100%;
+          height: 32px;
+          color: #fff;
+          border-color: @primary-color;
+          background: @primary-color;
+          text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+          font-size: 14px;
+          border-radius: 2px;
+          transform: translateY(0);
+        }
+      }
+
+      .hiprint-option-item-submitBtn,
+      .hiprint-option-item-deleteBtn {
+        width: 134px;
+        height: 32px;
+        margin: 0 5px 10px;
+        color: #fff;
+
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+        font-size: 14px;
+        border-radius: 2px;
+
+        &.hiprint-option-item-submitBtn {
+          border-color: @primary-color;
+          background: @primary-color;
+          margin-left: 10px;
+        }
+
+        &.hiprint-option-item-deleteBtn {
+          border-color: @error-color;
+          background: @error-color;
+        }
+      }
+    }
+  }
+}
+.custom-print-size-popover {
+  .custom-size-input-group {
+    display: flex;
+    margin: 0 0 10px;
+  }
+
+  .custom-size-input {
+    width: 100px !important;
+    text-align: center !important;
+  }
+
+  .custom-size-input-range {
+    width: 30px;
+    text-align: center;
+    margin: 0 2px !important;
+    padding: 0;
+    border: none;
+    background: @component-background;
+  }
+}

@@ -1,0 +1,50 @@
+html[data-theme='light'] {
+  .ant-modal.designer-modal {
+    background-color: @app-base-background;
+    position: relative;
+    &.process-designer-modal {
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url('../assets/images/bg-dot.png') repeat 100% 100%;
+        z-index: 0;
+      }
+    }
+
+    .ant-modal-content {
+      background-color: transparent !important;
+
+      .ant-modal-header {
+        background-color: transparent !important;
+      }
+      .ant-modal-body {
+        background-color: transparent !important;
+        & > .scrollbar {
+          background-color: transparent !important;
+        }
+      }
+      .process-flow-container {
+        background-color: transparent !important;
+      }
+    }
+  }
+}
+html[data-theme='light'][data-bg='blue'] {
+  .ant-modal.designer-modal {
+    background-image: url('../assets/images/bg/blueBg.png');
+  }
+}
+html[data-theme='light'][data-bg='purple'] {
+  .ant-modal.designer-modal {
+    background-image: url('../assets/images/bg/purpleBg.png');
+  }
+}
+html[data-theme='light'][data-bg='green'] {
+  .ant-modal.designer-modal {
+    background-image: url('../assets/images/bg/greenBg.png');
+  }
+}

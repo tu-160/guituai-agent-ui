@@ -1,0 +1,24 @@
+{
+  "name": "@future/apis",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "scripts": {},
+  "main": "index.ts",
+  "dependencies": {
+    "@future/core": "workspace:^",
+    "ant-design-vue": "catalog:",
+    "axios": "catalog:",
+    "lodash-es": "catalog:",
+    "qs": "catalog:",
+    "vue": "catalog:"
+  },
+  "devDependencies": {
+    "@future/types": "workspace:^",
+    "@types/lodash-es": "catalog:",
+    "@types/qs": "catalog:"
+  }
+}

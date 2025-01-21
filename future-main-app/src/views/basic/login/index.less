@@ -1,0 +1,463 @@
+@prefix-cls: ~'@{namespace}-login-container';
+@countdown-prefix-cls: ~'@{namespace}-countdown-input';
+@dark-bg: #293146;
+
+html[data-theme='dark'] {
+  .@{prefix-cls} {
+    background-image: url(@/assets/images/login-bg-dark.png);
+    .login-content {
+      background-color: @dark-bg;
+      box-shadow: 0px 40px 40px rgba(11, 15, 19, 0.2);
+      .login-left::after {
+        background-color: #343434;
+      }
+      .login-sub-title,
+      .rule-tip {
+        color: #606266;
+      }
+    }
+
+    .ant-input,
+    .ant-input-affix-wrapper,
+    .ant-input-password {
+      background-color: #232a3b;
+    }
+
+    .ant-btn:not(.ant-btn-link):not(.ant-btn-primary) {
+      border: 1px solid #4a5569;
+    }
+
+    &-form {
+      background-color: @dark-bg !important;
+    }
+    .code-box {
+      .code {
+        background: #3333 !important;
+      }
+    }
+    input.fix-auto-fill,
+    .fix-auto-fill input {
+      -webkit-box-shadow: 0 0 0 1000px #232a3b inset !important;
+    }
+    input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px #232a3b inset !important;
+      -webkit-text-fill-color: #c9d1d9 !important;
+    }
+    .ant-input-affix-wrapper > input.ant-input:focus {
+      box-shadow: 0 0 0 1000px #232a3b inset !important;
+      -webkit-text-fill-color: #c9d1d9 !important;
+      caret-color: #c9d1d9;
+      border-color: unset !important;
+    }
+    input:-internal-autofill-previewed,
+    input:-internal-autofill-selected {
+      -webkit-text-fill-color: #232a3b;
+      transition: background-color 5000s ease-out 0.2s;
+    }
+    .qrcode-form .qrcode-mask {
+      .qrcode-mask-main {
+        background: rgba(41, 49, 70, 0.96);
+      }
+    }
+  }
+}
+
+.@{prefix-cls} {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(@/assets/images/login-bg.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  background-origin: border-box;
+
+  .ant-input-affix-wrapper > input.ant-input:focus {
+    box-shadow: 0 0 0 1000px #fff inset !important;
+  }
+
+  .login-version {
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    width: 82px;
+    height: 82px;
+    background: url('@/assets/images/login_version.png') no-repeat center;
+    background-size: 100%;
+
+    .login-version-text {
+      width: 82px;
+      height: 82px;
+      line-height: 50px;
+      text-align: center;
+      color: #fff;
+      font-size: 16px;
+      transform: rotate(45deg);
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  .@{prefix-cls}-form {
+    width: 500px;
+    padding: 73px 50px 20px;
+    .ant-image,
+    .login-logo {
+      width: 100%;
+      height: 36px;
+      margin: 0 auto 20px;
+    }
+  }
+  .login-left {
+    height: 100%;
+    position: relative;
+    width: 500px;
+    padding-top: 80px;
+    position: relative;
+    &::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 420px;
+      background-color: @border-color-base1;
+      position: absolute;
+      right: 0;
+      top: 90px;
+    }
+    .ant-image,
+    .login-logo {
+      display: block;
+      width: 400px;
+      height: 36px;
+      margin: 0 auto 50px;
+    }
+
+    .login-banner {
+      display: block;
+      margin: 0 auto;
+      width: 400px;
+      height: auto;
+    }
+  }
+  .copyright {
+    color: #656e93;
+    font-size: 14px;
+    position: fixed;
+    bottom: 50px;
+    text-align: center;
+  }
+  .login-header {
+    position: absolute;
+    top: 80px;
+    right: 60px;
+    left: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .login-company-logo {
+      display: block;
+      .login-company-logo-img {
+        height: 36px;
+        width: auto;
+      }
+    }
+  }
+
+  .login-content {
+    height: 580px;
+    border-radius: 8px;
+    box-shadow: 0px 40px 40px rgba(141, 150, 160, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: @component-background;
+    z-index: 1;
+    overflow: hidden;
+
+    .login-cap {
+      font-size: 24px;
+      line-height: 33px;
+      margin-bottom: 8px;
+    }
+    .login-sub-title {
+      margin-bottom: 20px;
+      line-height: 17px;
+      color: #8c8c8c;
+      height: 17px;
+      user-select: none;
+      font-size: 14px;
+      span {
+        color: @primary-color;
+        cursor: pointer;
+      }
+    }
+
+    .login-tab {
+      margin-bottom: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .login-tab-item {
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 46px;
+        color: @text-color-secondary;
+        padding: 0 30px;
+        position: relative;
+        &.active {
+          font-size: 20px;
+          font-weight: 600;
+          color: @text-color-base;
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: @primary-color;
+          }
+        }
+      }
+    }
+
+    .sso-login-btn {
+      width: 100%;
+      font-size: 16px;
+      margin-top: 100px;
+    }
+    .code-box {
+      z-index: 100;
+      width: 400px;
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+      .code-floor {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &.code-floor1 {
+          margin-bottom: 12px;
+        }
+        .code {
+          width: 120px;
+          height: 32px;
+          background: @component-background;
+          border: 1px solid #93a9c6;
+          opacity: 1;
+          border-radius: 2px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          padding: 0 10px;
+          &:hover {
+            background: @primary-color;
+            border: 1px solid @primary-color;
+            .code-icon {
+              color: #fff;
+            }
+            .code-txt {
+              color: #fff;
+            }
+          }
+          .code-icon {
+            flex-shrink: 0;
+            font-size: 20px;
+            color: #93a9c6;
+            width: 20px;
+          }
+          .code-txt {
+            text-align: center;
+            font-size: 14px;
+            color: #93a9c6;
+            flex: 1;
+          }
+        }
+      }
+    }
+  }
+  .socials-box {
+    position: absolute;
+    padding: 0 50px;
+    bottom: 50px;
+    right: 0;
+    left: 0;
+  }
+
+  .socials-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .socials-item {
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 50%;
+      margin: 0 12px;
+      i {
+        font-size: 22px;
+        color: #b9b9b9;
+      }
+      &:hover {
+        background-color: @primary-color;
+        i {
+          color: #fff;
+        }
+      }
+    }
+  }
+  .sms-input {
+    width: 260px;
+    overflow: hidden;
+    .ant-input {
+      width: 260px;
+      min-width: 0 !important;
+    }
+  }
+  .sms-right {
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+    .codeImg {
+      width: 100%;
+      height: 40px;
+    }
+    .smsBtn {
+      width: 100%;
+    }
+  }
+  .rule-tip {
+    color: #8c8c8c;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: left;
+
+    .ant-form-item-control-input {
+      line-height: 12px !important;
+      min-height: 12px !important;
+    }
+  }
+  .qrcode-form {
+    position: relative;
+    padding-top: 20px;
+    .qrcode-title {
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 27px;
+    }
+    .qrcode-content {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      padding: 10px;
+      margin: 0 auto;
+      background: url(../../../assets/images/qrcode-bg.png) 100% 100% no-repeat;
+      background-size: cover;
+      .ant-qrcode {
+        border-radius: 0;
+      }
+    }
+    .qrcode-mask {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .qrcode-mask-main {
+        position: relative;
+        width: 240px;
+        height: 240px;
+        background: rgba(255, 255, 255, 0.96);
+        text-align: center;
+        padding-top: 70px;
+        .qrcode-icon {
+          background-color: @primary-color;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin: 0 auto 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 40px;
+          color: #fff;
+          &.expired-icon {
+            background-color: @error-color;
+          }
+        }
+        .qrcode-tip {
+          font-size: 20px;
+        }
+      }
+    }
+    .qrcode-bottom {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .link-text {
+      font-size: 16px !important;
+    }
+  }
+}
+.login-code-popover {
+  .ant-popover-inner-content {
+    padding: 12px;
+  }
+  .code-content {
+    padding: 0;
+    .qrcode {
+      display: block;
+      width: 122px;
+      height: 122px;
+    }
+    .code-tip {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 25px;
+      color: @text-color-label;
+    }
+  }
+}
+.future-login-code-modal {
+  .ant-modal-header {
+    border-bottom: none !important;
+    height: 10px !important;
+  }
+  .wechat-code-container {
+    text-align: center;
+    padding-bottom: 30px;
+    .cap {
+      line-height: 38px;
+      font-size: 26px;
+      color: #000721;
+    }
+    .wechat-code-img {
+      display: inline-block;
+      width: 182px;
+      height: 182px;
+      margin: 40px 0 44px;
+    }
+    .tip {
+      line-height: 30px;
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 6px;
+      font-weight: 400;
+    }
+  }
+}

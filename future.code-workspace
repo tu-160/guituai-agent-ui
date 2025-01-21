@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "name": "@future/main",
+      "path": "future-main-app"
+    },
+    {
+      "name": "@future/subs",
+      "path": "future-sub-apps"
+    }
+  ],
+  "settings": {
+    "i18n-ally.localesPaths": [
+      "src/locales",
+      "src/locales/lang",
+      "public/resource/tinymce/langs"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@future/types",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./global": {
+      "types": "./global.d.ts"
+    }
+  },
+  "dependencies": {
+    "@future-core/typings": "workspace:*",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
+  }
+}

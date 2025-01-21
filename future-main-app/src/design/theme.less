@@ -1,0 +1,278 @@
+.bg-white {
+  background-color: @component-background !important;
+}
+.bg-content {
+  background-color: @app-content-background !important;
+}
+
+html[data-theme='light'] {
+  .text-secondary {
+    color: rgb(0 0 0 / 45%);
+  }
+
+  .ant-alert-success {
+    background-color: #f6ffed;
+    border: 1px solid #b7eb8f;
+  }
+
+  .ant-alert-error {
+    background-color: #fff2f0;
+    border: 1px solid #ffccc7;
+  }
+
+  .ant-alert-warning {
+    background-color: #fffbe6;
+    border: 1px solid #ffe58f;
+  }
+
+  :not(:root):fullscreen::backdrop {
+    background-color: @layout-body-background !important;
+  }
+  .action-bar .future-device-switch {
+    background: #f7f8fa;
+  }
+}
+
+[data-theme='dark'] {
+  // 滚动条右下角的三角形颜色
+  ::-webkit-scrollbar-corner {
+    background-color: #151515;
+  }
+
+  .text-secondary {
+    color: #8b949e;
+  }
+
+  .ant-picker-input input {
+    border: none !important;
+    box-shadow: unset !important;
+  }
+
+  .ant-card-grid-hoverable:hover {
+    box-shadow: 0 3px 6px -4px rgb(0 0 0 / 48%), 0 6px 16px 0 rgb(0 0 0 / 32%), 0 9px 28px 8px rgb(0 0 0 / 20%);
+  }
+
+  .ant-card-grid {
+    box-shadow: 1px 0 0 0 #434343, 0 1px 0 0 #434343, 1px 1px 0 0 #434343, 1px 0 0 0 #434343 inset, 0 1px 0 0 #434343 inset;
+  }
+
+  .ant-calendar-selected-day .ant-calendar-date {
+    color: rgb(0 0 0 / 80%);
+  }
+
+  .ant-select-tree li .ant-select-tree-node-content-wrapper.ant-select-tree-node-selected {
+    color: rgb(0 0 0 / 90%);
+  }
+
+  .ant-rate-star-half .ant-rate-star-first,
+  .ant-rate-star-full .ant-rate-star-second {
+    color: inherit !important;
+  }
+  .ant-modal.future-add-modal {
+    .add-main {
+      .add-item {
+        background: rgb(0 0 0 / 90%) !important;
+        .add-icon {
+          background: #1f1f1f !important;
+          color: #fff !important;
+        }
+      }
+    }
+  }
+  .template-list {
+    .template-item {
+      color: #fff !important;
+      background-color: rgba(255, 255, 255, 0.08) !important;
+    }
+  }
+  .ant-modal.future-import-modal {
+    .import-main .upload {
+      border: 1px solid #303030;
+      .up_left {
+        background: #333333;
+      }
+    }
+  }
+  .uploader-app {
+    .uploader-file:hover {
+      background-color: unset;
+    }
+    .uploader-file-info:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+    .uploader-file-progress {
+      background-color: #333;
+    }
+  }
+  .plan-popover {
+    .plan-list-item:hover {
+      background-color: #333;
+    }
+  }
+  .im-container {
+    background: #333 !important;
+    box-shadow: 0 0 6px 1px rgba(121, 121, 121, 0.1) !important;
+    .header {
+      background: #151515 !important;
+      border-bottom: 1px solid #303030 !important;
+    }
+    .main {
+      .chatBox {
+        .chatList,
+        .writeBox {
+          background: #151515 !important;
+        }
+      }
+      .historyBox {
+        background: #151515 !important;
+      }
+    }
+  }
+  .parameter-box .left-pane .left-pane-list .list .search-box {
+    border-bottom: 1px solid #303030;
+  }
+  .future-login-container .login-content .login-tab .item {
+    color: #fff;
+  }
+  .future-basic-table.future-sub-table {
+    .ant-table-wrapper {
+      background: #1f1f1f !important;
+    }
+    .ant-form {
+      background: transparent;
+    }
+  }
+  .future-basic-drawer {
+    .future-basic-drawer-footer,
+    .ant-drawer-body {
+      background-color: #1f1f1f !important;
+    }
+  }
+  .ant-table-summary {
+    box-shadow: 0 -1px 0 #333333;
+  }
+  .popup-select-popover {
+    .ant-table-body {
+      background: #1f1f1f;
+    }
+  }
+  .future-tenant-social-modal {
+    .other-main {
+      background: url('../assets/images/other-login-bg-dark.png') no-repeat center;
+      background-size: auto 100%;
+      .other-body .other-login-card {
+        background-color: #171b26;
+      }
+    }
+  }
+  .notice-modal .notice-wrapper {
+    .info {
+      border-bottom: 1px solid #303030 !important;
+    }
+    .file-list {
+      border-top: 1px solid #303030 !important;
+    }
+  }
+  .monitor-container {
+    background-color: #333 !important;
+  }
+  .dashboard-container {
+    background: #333 !important;
+  }
+  .tem-container {
+    background-color: #333 !important;
+    .tem_list {
+      background-color: #151515 !important;
+      .content1 .item,
+      .online-sig,
+      .sigbut {
+        border: 1px solid #303030 !important;
+      }
+    }
+    .ant-table-small .ant-table-thead > tr > th {
+      background-color: #1d1d1d !important;
+    }
+  }
+  .future-extend-print-data {
+    .bill,
+    .record,
+    .storage {
+      background-color: #333 !important;
+      .tem_list {
+        background-color: #151515 !important;
+        .content1 .item,
+        .online-sig,
+        .sigbut {
+          border: 1px solid #303030 !important;
+        }
+      }
+      .ant-table-small .ant-table-thead > tr > th {
+        background-color: #1d1d1d !important;
+      }
+    }
+  }
+  .future-extend-barCode {
+    #qrcode,
+    #barcode {
+      border: 1px solid #303030 !important;
+    }
+  }
+  .calc-modal {
+    .calc-box {
+      .calc-preview {
+        border: 1px solid #303030 !important;
+      }
+      .calc-tip,
+      .empty-text {
+        color: #8b949e !important;
+      }
+    }
+    .calc-btn {
+      background: #333 !important;
+    }
+  }
+  .profile-wrapper {
+    .profile-left-tabs {
+      .ant-tabs-tab-disabled {
+        .ant-tabs-tab-btn {
+          border-bottom: 1px solid #303030 !important;
+        }
+      }
+    }
+  }
+  .future-log-detail {
+    .ant-collapse {
+      border-top: 1px solid #303030 !important;
+      .ant-collapse-item {
+        border-bottom: 1px solid #303030 !important;
+      }
+    }
+  }
+  .ant-modal.future-full-modal {
+    .ant-modal-header {
+      .future-full-modal-header {
+        .header-steps.ant-steps {
+          background: rgba(51, 51, 51, 0.6);
+          .ant-steps-item {
+            &.ant-steps-item-active {
+              .ant-steps-item-container {
+                background-color: #333333 !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .configuration-contain {
+    background-color: #151515 !important;
+  }
+  .setting-drawer {
+    .setting-drawer-cap {
+      color: #fff !important;
+    }
+  }
+  .portal-toggle-drawer.common-menus-drawer .main .item .item-list .item-list-item:hover {
+    background-color: #333333 !important;
+  }
+}

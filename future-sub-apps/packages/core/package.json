@@ -1,0 +1,11 @@
+{
+  "name": "@future/core",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.ts",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

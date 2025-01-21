@@ -1,0 +1,143 @@
+@prefix-cls: ~'@{namespace}-basic-generator';
+
+.@{prefix-cls} {
+  .right-board {
+    width: 340px;
+    flex-shrink: 0;
+    background-color: @component-background;
+    .field-box {
+      position: relative;
+      height: calc(100% - 42px);
+      box-sizing: border-box;
+      overflow: hidden;
+      & > .scrollbar > .scrollbar__wrap > .scrollbar__view {
+        padding: 10px;
+      }
+    }
+    .right-board-form {
+      .ant-form-item {
+        margin-bottom: 18px;
+      }
+      .right-radio {
+        .ant-radio-button-wrapper {
+          padding: 0 11px;
+        }
+      }
+      .btn-config-list {
+        .btn-cell {
+          display: flex;
+          align-items: center;
+          margin-bottom: 18px;
+          .ant-checkbox-wrapper {
+            width: 100px;
+            flex-shrink: 0;
+          }
+        }
+      }
+      .reg-item {
+        padding: 12px 6px;
+        background-color: @app-content-background;
+        position: relative;
+        border-radius: 4px;
+
+        .close-btn {
+          position: absolute;
+          right: -6px;
+          top: -6px;
+          display: block;
+          width: 16px;
+          height: 16px;
+          line-height: 16px;
+          background: rgba(0, 0, 0, 0.2);
+          border-radius: 50%;
+          color: #fff;
+          text-align: center;
+          z-index: 1;
+          cursor: pointer;
+          font-size: 12px;
+          i {
+            font-size: 12px;
+          }
+
+          &:hover {
+            background: @error-color;
+          }
+        }
+
+        & + .reg-item {
+          margin-top: 18px;
+        }
+      }
+      .options-list {
+        margin-bottom: -10px;
+        .scrollbar__wrap {
+          margin-bottom: 0 !important;
+        }
+        .select-item {
+          display: flex;
+          border: 1px dashed @component-background;
+          box-sizing: border-box;
+          & .ant-input + .ant-input {
+            margin-left: 4px;
+          }
+          .ant-select {
+            width: 100%;
+          }
+          & + .select-item {
+            margin-top: 4px;
+          }
+          &.sortable-chosen {
+            border: 1px dashed @primary-color;
+          }
+          .select-line-icon {
+            line-height: 31px;
+            font-size: 22px;
+            padding: 0 4px;
+            color: #606266;
+            .icon-ym-darg {
+              font-size: 20px;
+              line-height: 31px;
+              display: inline-block;
+            }
+            .icon-ym-btn-clearn {
+              font-size: 18px;
+            }
+          }
+          .close-btn {
+            cursor: pointer;
+            color: @error-color;
+            height: 32px;
+            display: flex;
+            align-items: center;
+          }
+          .option-drag {
+            cursor: move;
+          }
+        }
+        .add-btn {
+          padding-left: 27px;
+        }
+        .future-tree__name {
+          width: calc(100% - 60px);
+        }
+      }
+    }
+  }
+}
+.select-item-add {
+  text-align: center;
+  .ant-btn {
+    padding: 4px 12px !important;
+  }
+}
+.ant-select-item-option-content {
+  .custom-option-left {
+    float: left;
+  }
+  .custom-option-right {
+    float: right;
+    color: @text-color-secondary;
+    font-size: 13px;
+    margin-left: 20px;
+  }
+}

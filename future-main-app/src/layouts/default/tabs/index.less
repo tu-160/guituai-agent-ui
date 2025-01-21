@@ -1,0 +1,202 @@
+@prefix-cls: ~'@{namespace}-multiple-tabs';
+
+html[data-theme='dark'] {
+  .@{prefix-cls} {
+    background-color: transparent;
+    .ant-tabs-nav-list {
+      background-color: #2c2c2c !important;
+    }
+
+    .ant-tabs-tab {
+      background-color: #2c2c2c;
+    }
+    .ant-tabs-tab-active {
+      background-color: #000 !important;
+    }
+    .ant-tabs-nav-operations,
+    .ant-tabs-extra-content {
+      background-color: #2c2c2c !important;
+    }
+  }
+}
+
+.@{prefix-cls} {
+  z-index: 10;
+  height: @multiple-height;
+  line-height: @multiple-height;
+  padding: 0 10px;
+
+  .ant-tabs-small {
+    height: @multiple-height;
+  }
+
+  .ant-tabs.ant-tabs-card {
+    .ant-tabs-nav {
+      height: @multiple-height;
+      margin: 0;
+      border: 0;
+      box-shadow: none;
+      &::before {
+        display: none;
+      }
+      .ant-tabs-nav-wrap {
+        border-radius: calc(@multiple-height / 2);
+        &.ant-tabs-nav-wrap-ping-left,
+        &.ant-tabs-nav-wrap-ping-right {
+          border-radius: calc(@multiple-height / 2) 0 0 calc(@multiple-height / 2);
+          .ant-tabs-nav-list {
+            border-radius: calc(@multiple-height / 2) 0 0 calc(@multiple-height / 2);
+          }
+        }
+        .ant-tabs-nav-list {
+          background: rgba(255, 255, 255, 0.4);
+          border-radius: calc(@multiple-height / 2);
+        }
+      }
+
+      .ant-tabs-nav-container {
+        height: @multiple-height;
+        padding-top: 2px;
+      }
+      .ant-tabs-nav-operations {
+        border-radius: 0 calc(@multiple-height / 2) calc(@multiple-height / 2) 0;
+        background: rgba(255, 255, 255, 0.4);
+      }
+      .ant-tabs-extra-content {
+        margin-left: 10px;
+        border-radius: 0 calc(@multiple-height / 2) calc(@multiple-height / 2) 0;
+        border-radius: calc(@multiple-height / 2);
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      .ant-tabs-tab {
+        height: @multiple-height;
+        padding: 0 18px;
+        line-height: @multiple-height;
+        color: @text-color-base;
+        background-color: transparent;
+        border: none;
+        transition: none;
+        font-size: 14px;
+        border-radius: 20px;
+        overflow: hidden;
+        svg {
+          width: 0.8em;
+        }
+        .ant-tabs-tab-remove {
+          margin: 0 0 0 4px;
+        }
+        &.ant-tabs-tab-active {
+          position: relative;
+          padding-left: 18px;
+          background-color: rgba(255, 255, 255, 0.4);
+          border: none;
+          transition: none;
+          svg {
+            fill: @primary-color;
+          }
+          .ant-tabs-tab-remove {
+            opacity: 1;
+          }
+        }
+      }
+
+      .ant-tabs-tab:not(.ant-tabs-tab-active) {
+        &:hover {
+          color: @primary-color;
+          svg {
+            fill: @primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  .ant-dropdown-trigger {
+    display: inline-flex;
+  }
+
+  &--hide-close {
+    .ant-tabs-tab-remove {
+      opacity: 0 !important;
+    }
+  }
+
+  &-content {
+    &__extra-quick,
+    &__extra-redo,
+    &__extra-fold {
+      display: inline-block;
+      width: 40px;
+      font-size: 16px;
+      height: @multiple-height;
+      line-height: @multiple-height;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        color: @text-color-base;
+      }
+
+      span[role='img'] {
+        transform: rotate(90deg);
+      }
+    }
+    &__extra-quick {
+      padding-right: 8px;
+      font-weight: 600;
+    }
+
+    &__extra-redo {
+      padding-left: 8px;
+      span[role='img'] {
+        transform: rotate(0deg);
+      }
+    }
+
+    &__info {
+      display: inline-block;
+      width: 100%;
+      height: @multiple-height;
+      font-size: 14px;
+      cursor: pointer;
+      user-select: none;
+    }
+    &__icon {
+      display: inline-block;
+      font-size: 16px;
+    }
+  }
+}
+
+.ant-tabs-dropdown-menu {
+  &-title-content {
+    display: flex;
+    align-items: center;
+
+    .@{prefix-cls} {
+      &-content__info {
+        width: auto;
+        margin-left: 0;
+        line-height: 28px;
+        height: 28px;
+      }
+    }
+    .anticon-close {
+      margin-left: 4px;
+      svg {
+        width: 0.8em;
+      }
+    }
+  }
+
+  &-item-remove {
+    margin-left: auto;
+  }
+}
+
+.multiple-tabs__dropdown {
+  .ant-dropdown-content {
+    width: 172px;
+  }
+}

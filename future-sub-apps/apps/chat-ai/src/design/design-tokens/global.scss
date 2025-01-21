@@ -1,0 +1,28 @@
+html > body {
+  overflow: hidden;
+}
+
+html body #app {
+  z-index: 10;
+  height: 100%;
+  overflow: auto;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 14px;
+}
+
+html,
+html body,
+html body #app {
+  min-height: 300px;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 0 !important;
+}
