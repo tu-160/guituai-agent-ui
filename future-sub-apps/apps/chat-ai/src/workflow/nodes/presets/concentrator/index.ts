@@ -11,7 +11,7 @@ export { type IConcentratorComponent };
 export const nodeDefine: INodeDefine = {
   id: 'concentrator-0001',
   key: 'Concentrator',
-  type: 'concentrator-node',
+  type: 'Concentrator',
   name: t('flow.concentrator'),
   icon: 'lucide:merge',
   index: 11_000,

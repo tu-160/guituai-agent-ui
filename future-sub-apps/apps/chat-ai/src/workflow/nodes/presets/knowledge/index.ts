@@ -11,7 +11,7 @@ export { type IKnowledage };
 export const nodeDefine: INodeDefine = {
   id: 'retrieval-0001',
   key: 'Retrieval',
-  type: 'retrieval-node',
+  type: 'Retrieval',
   name: t('flow.retrieval'),
   icon: 'lucide:book-open-text',
   index: 2000,

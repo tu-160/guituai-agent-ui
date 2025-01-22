@@ -11,7 +11,7 @@ export { type IRewriteComponent };
 export const nodeDefine: INodeDefine = {
   id: 'rewrite-0001',
   key: 'RewriteQuestion',
-  type: 'rewrite-node',
+  type: 'RewriteQuestion',
   name: t('flow.rewriteQuestion'),
   icon: 'lucide:pencil-ruler',
   index: 8000,

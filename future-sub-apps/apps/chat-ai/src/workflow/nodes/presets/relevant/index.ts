@@ -11,7 +11,7 @@ export { type IRelevantComponent };
 export const nodeDefine: INodeDefine = {
   id: 'relevant-0001',
   key: 'Relevant',
-  type: 'relevant-node',
+  type: 'Relevant',
   name: t('flow.relevant'),
   icon: 'lucide:equal-approximately',
   index: 5000,

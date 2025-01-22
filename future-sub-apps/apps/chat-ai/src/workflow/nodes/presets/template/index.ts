@@ -11,7 +11,7 @@ export { type ITemplateComponent };
 export const nodeDefine: INodeDefine = {
   id: 'template-0001',
   key: 'Template',
-  type: 'template-node',
+  type: 'Template',
   name: t('flow.template'),
   icon: 'lucide:layout-template',
   index: 90_000,

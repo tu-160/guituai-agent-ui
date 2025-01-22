@@ -11,7 +11,7 @@ export { type IKeywordComponent };
 export const nodeDefine: INodeDefine = {
   id: 'keyword-0001',
   key: 'KeywordExtract',
-  type: 'keyword-node',
+  type: 'KeywordExtract',
   name: t('flow.keywordExtract'),
   icon: 'lucide:file-key',
   index: 9000,

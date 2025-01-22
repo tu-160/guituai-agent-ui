@@ -14,7 +14,7 @@ export { type IAnswerComponent };
 export const nodeDefine: INodeDefine = {
   id: 'answer-0001',
   key: 'Answer',
-  type: 'answer-node',
+  type: 'Answer',
   name: t('chat_index.agentDialog'),
   icon: 'lucide:message-circle-more',
   index: 4000,

@@ -11,7 +11,7 @@ export { type IStart };
 export const nodeDefine: INodeDefine = {
   id: 'start-0001',
   key: 'Begin',
-  type: 'start-node',
+  type: 'begin',
   name: i18n.global.t('flow.begin'),
   icon: 'lucide:square-play',
   index: 1000,

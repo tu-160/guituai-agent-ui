@@ -11,7 +11,7 @@ export { type IGenerateComponent };
 export const nodeDefine: INodeDefine = {
   id: 'generate-0001',
   key: 'Generate',
-  type: 'generate-node',
+  type: 'Generate',
   name: t('flow.generate'),
   icon: 'lucide:binary',
   index: 3000,

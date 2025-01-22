@@ -11,7 +11,7 @@ export { type ISwitchComponent };
 export const nodeDefine: INodeDefine = {
   id: 'switch-0001',
   key: 'Switch',
-  type: 'switch-node',
+  type: 'Switch',
   name: t('flow.switch'),
   icon: 'lucide:arrow-right-left',
   index: 9000,

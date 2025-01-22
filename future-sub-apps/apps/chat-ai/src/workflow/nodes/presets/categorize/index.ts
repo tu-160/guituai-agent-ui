@@ -11,7 +11,7 @@ export { type ICategorizeComponent };
 export const nodeDefine: INodeDefine = {
   id: 'categorize-0001',
   key: 'Categorize',
-  type: 'categorize-node',
+  type: 'Categorize',
   name: t('flow.categorize'),
   icon: 'lucide:chart-bar-stacked',
   index: 5000,

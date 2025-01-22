@@ -11,7 +11,7 @@ export { type IMessageComponent };
 export const nodeDefine: INodeDefine = {
   id: 'message-0001',
   key: 'Message',
-  type: 'message-node',
+  type: 'Message',
   name: t('flow.message'),
   icon: 'lucide:mail',
   index: 5000,
