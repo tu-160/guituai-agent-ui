@@ -389,7 +389,7 @@ export default {
     emptyResponse: '空回复',
     emptyResponseTip: `如果在知识库中没有检索到用户的问题，它将使用它作为答案。 如果您希望 LLM 在未检索到任何内容时提出自己的意见，请将此留空。`,
     setAnOpener: '设置开场白',
-    setAnOpenerInitial: `你好！ 我是你的助理，有什么可以帮到你的吗？`,
+    setAnOpenerInitial: `你好！我是你的助理，有什么可以帮到你的吗？`,
     setAnOpenerTip: '您想如何欢迎您的客户？',
     knowledgeBases: '知识库',
     knowledgeBasesMessage: '请选择',

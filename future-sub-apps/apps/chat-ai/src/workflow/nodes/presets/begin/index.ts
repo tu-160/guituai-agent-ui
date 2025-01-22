@@ -22,7 +22,7 @@ export const getDataDefault = () =>
   ({
     component_name: `${nodeDefine.key}`,
     params: {
-      // prologue: '你好！我是你的助理，有什么可以帮到你的吗？',
+      prologue: i18n.global.t('chat.setAnOpenerInitial'),
     },
   }) as IStart;
 

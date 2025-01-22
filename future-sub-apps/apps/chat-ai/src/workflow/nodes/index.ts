@@ -17,7 +17,17 @@ export function getAllNodesPropertyView() {
     return propertyViews;
   }
   Object.keys(propertyList).forEach((key) => {
-    propertyViews[key.replace('./presets/', '').replace('/property.vue', '-node').replace('/', '-')] = propertyList[key];
+    debugger
+    let tmpKey = key.replace('./presets/', '').replace('/property.vue', '').replace('/', '');
+    if(tmpKey === 'begin') {
+      propertyViews[tmpKey] = propertyList[key];
+    } else {
+      // 第一个字符统一转大写
+      tmpKey = tmpKey.charAt(0).toUpperCase() + tmpKey.slice(1);
+      propertyViews[tmpKey] = propertyList[key];
+    }
+
+    // propertyViews[key.replace('./presets/', '').replace('/property.vue', '-node').replace('/', '-')] = propertyList[key];
   });
   propertyViews.isInit = true;
   return propertyViews;
@@ -29,17 +39,35 @@ export function getAllNodesPropertyView() {
  */
 const DataDefault = {} as any;
 export function getAllNodesPropertyDataDefault(type: string) {
+
   if (DataDefault.isInit) {
     return cloneDeep(DataDefault[type]);
   }
   Object.keys(getDataDefaultFuncList).forEach((key) => {
-    DataDefault[key.replace('./presets/', '').replace('/index.ts', '-node').replace('/', '-')] = (getDataDefaultFuncList[key] as () => any)();
+
+    let tmpKey = generateKey(key);
+    if(tmpKey === 'begin') {
+      DataDefault[tmpKey] = (getDataDefaultFuncList[key] as () => any)();
+    } else {
+      DataDefault[tmpKey] = (getDataDefaultFuncList[key] as () => any)();
+    }
+    // DataDefault[key.replace('./presets/', '').replace('/index.ts', '-node').replace('/', '-')] = (getDataDefaultFuncList[key] as () => any)();
   });
   DataDefault.isInit = true;
 
   return cloneDeep(DataDefault[type]);
 }
 
+export function generateKey(pathString: string) {
+  let tmpKey = pathString.replace('./presets/', '').replace('/index.ts', '');
+  if(tmpKey === 'begin') {
+    return tmpKey;
+  } else {
+    // 第一个字符统一转大写
+    tmpKey = tmpKey.charAt(0).toUpperCase() + tmpKey.slice(1);
+    return tmpKey;
+  }
+}
 /**
  * 获取节点定义
  * @returns

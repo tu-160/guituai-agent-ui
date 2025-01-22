@@ -116,6 +116,7 @@ function useBizFlow() {
 
   // 获取节点业务数据KEY
   const getBizComponentKey = (nodeInfo: any) => {
+
     // return `${nodeInfo.type}:${nodeInfo.id}`;
     // const type = nodeInfo.type as WorkflowKeyType;
     // const key = WorkflowKeys[type] || nodeInfo.type;
@@ -179,7 +180,7 @@ function useBizFlow() {
   };
 
   const deleteComponentRelation = (lf: LogicFlow, data: any) => {
-    debugger
+
     const graphData: any = lf.getGraphData();
     let sourceFlowNodeInfo: any = null;
     let sourceBizNodeInfo: any = null;
@@ -320,7 +321,7 @@ function useBizFlow() {
       nodes: [
         {
           id: '',
-          type: 'start-node',
+          type: 'begin',
           x: (mainDomRef.value?.clientHeight || 0) / 2,
           y: (mainDomRef.value?.clientWidth || 0) / 3,
           properties: {
@@ -345,6 +346,7 @@ function useBizFlow() {
           canvas_id: routeParams.id,
         };
         if (Object.keys(routeParams).length > 0) {
+
           const res = await G0003(testParams);
           modelRt.flowData = { ...res.data };
           const nodes = res?.data?.dsl?.graph?.nodes;
