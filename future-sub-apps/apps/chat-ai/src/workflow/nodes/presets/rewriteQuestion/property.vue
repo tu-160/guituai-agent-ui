@@ -82,6 +82,9 @@ useBaseLogic(props, dataProp, handleFlowUtils, currentNodeModel, lfInstance);
 
 <template>
   <CompBaseProperty :close="close" :node-define="nodeDefine">
+    <div>
+      <p style="left: auto">{{i18n.global.t('flow.rewriteQuestionDescription')}}</p>
+    </div>
     <a-form>
       <CompWidgetLlm v-model:data="dataProp.params" />
       <a-form-item class="mt-6" :label="t('flow.loop')" :tooltip="t('flow.loopTip')">

@@ -88,6 +88,9 @@ useBaseLogic(props, handleFlowUtils, currentNodeModel, lfInstance);
 
 <template>
   <CompBaseProperty :close="close" :node-define="nodeDefine">
+    <div>
+      <p style="left: auto">{{i18n.global.t('flow.generateDescription')}}</p>
+    </div>
     <a-form :label-col="Config.form.labelCol" :wrapper-col="Config.form.wrapperCol">
       <CompWidgetLlm v-model:data="dataProp.params" />
 
