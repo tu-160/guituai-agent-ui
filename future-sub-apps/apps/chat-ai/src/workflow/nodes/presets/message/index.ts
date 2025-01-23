@@ -13,6 +13,7 @@ export const nodeDefine: INodeDefine = {
   key: 'Message',
   type: 'Message',
   name: t('flow.message'),
+  description: i18n.global.t('flow.messageDescription'),
   icon: 'lucide:mail',
   index: 5000,
 };

@@ -37,10 +37,14 @@ useBaseLogic();
 </script>
 
 <template>
+
   <CompBaseProperty :close="close" :node-define="nodeDefine">
+    <div class="border-b border-solid">
+      <p style="left: auto">{{i18n.global.t('flow.beginDescription')}}</p>
+    </div>
     <a-form layout="vertical">
       <a-form-item :label="i18n.global.t('chat.setAnOpener')" :tooltip="i18n.global.t('chat.setAnOpenerTip')">
-        <a-textarea v-model:value="dataProp.params.prologue" :rows="4" :placeholder="i18n.global.t('chat.pleaseInput')" show-count />
+        <a-textarea v-model:value="dataProp.params.prologue" :rows="4" :placeholder="i18n.global.t('common.pleaseInput')" show-count />
       </a-form-item>
     </a-form>
   </CompBaseProperty>

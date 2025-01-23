@@ -13,6 +13,7 @@ export const nodeDefine: INodeDefine = {
   key: 'Switch',
   type: 'Switch',
   name: t('flow.switch'),
+  description: i18n.global.t('flow.switchDescription'),
   icon: 'lucide:arrow-right-left',
   index: 9000,
 };

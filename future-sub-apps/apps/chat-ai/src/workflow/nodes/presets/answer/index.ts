@@ -15,8 +15,9 @@ export const nodeDefine: INodeDefine = {
   id: 'answer-0001',
   key: 'Answer',
   type: 'Answer',
-  name: t('chat_index.agentDialog'),
+  name: t('flow.answer'),
   icon: 'lucide:message-circle-more',
+  description: t('flow.answerDescription'),
   index: 4000,
 };
 

@@ -13,6 +13,7 @@ export const nodeDefine: INodeDefine = {
   key: 'RewriteQuestion',
   type: 'RewriteQuestion',
   name: t('flow.rewriteQuestion'),
+  description: i18n.global.t('flow.rewriteQuestionDescription'),
   icon: 'lucide:pencil-ruler',
   index: 8000,
 };

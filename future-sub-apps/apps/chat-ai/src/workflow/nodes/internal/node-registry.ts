@@ -12,6 +12,7 @@ export interface INodeDefine {
   key: string;
   type: string;
   name: string;
+  description: string;
   icon: string;
   index: number;
   isHidden?: boolean;

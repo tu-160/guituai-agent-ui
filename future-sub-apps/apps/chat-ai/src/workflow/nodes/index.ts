@@ -17,7 +17,7 @@ export function getAllNodesPropertyView() {
     return propertyViews;
   }
   Object.keys(propertyList).forEach((key) => {
-    debugger
+
     let tmpKey = key.replace('./presets/', '').replace('/property.vue', '').replace('/', '');
     if(tmpKey === 'begin') {
       propertyViews[tmpKey] = propertyList[key];

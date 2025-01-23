@@ -13,6 +13,7 @@ export const nodeDefine: INodeDefine = {
   key: 'Categorize',
   type: 'Categorize',
   name: t('flow.categorize'),
+  description: i18n.global.t('flow.categorizeDescription'),
   icon: 'lucide:chart-bar-stacked',
   index: 5000,
 };

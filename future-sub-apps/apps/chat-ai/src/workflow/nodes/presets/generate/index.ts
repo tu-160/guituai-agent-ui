@@ -13,6 +13,7 @@ export const nodeDefine: INodeDefine = {
   key: 'Generate',
   type: 'Generate',
   name: t('flow.generate'),
+  description: i18n.global.t('flow.generateDescription'),
   icon: 'lucide:binary',
   index: 3000,
 };

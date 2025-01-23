@@ -13,6 +13,7 @@ export const nodeDefine: INodeDefine = {
   key: 'Concentrator',
   type: 'Concentrator',
   name: t('flow.concentrator'),
+  description: i18n.global.t('flow.concentratorDescription'),
   icon: 'lucide:merge',
   index: 11_000,
 };

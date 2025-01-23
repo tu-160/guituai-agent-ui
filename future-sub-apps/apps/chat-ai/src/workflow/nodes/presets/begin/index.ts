@@ -13,6 +13,7 @@ export const nodeDefine: INodeDefine = {
   key: 'Begin',
   type: 'begin',
   name: i18n.global.t('flow.begin'),
+  description: i18n.global.t('flow.beginDescription'),
   icon: 'lucide:square-play',
   index: 1000,
   isHidden: true,

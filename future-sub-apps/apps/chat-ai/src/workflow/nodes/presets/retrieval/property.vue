@@ -94,7 +94,7 @@ useBaseLogic(props, handleFlowUtils, currentNodeModel, lfInstance);
         <a-slider v-model:value="dataProp.params.top_k" :max="30" :min="0" :step="1" />
       </a-form-item>
       <a-form-item :label="t('chat.emptyResponse')" :tooltips="t('chat.emptyResponseTip')">
-        <a-textarea v-model:value="dataProp.params.empty_response" :rows="4" :placeholder="t('chat.pleaseInput')" />
+        <a-textarea v-model:value="dataProp.params.empty_response" :rows="4" :placeholder="t('common.pleaseInput')" />
       </a-form-item>
     </a-form>
   </CompBaseProperty>

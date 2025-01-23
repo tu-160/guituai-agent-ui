@@ -13,6 +13,7 @@ export const nodeDefine: INodeDefine = {
   key: 'KeywordExtract',
   type: 'KeywordExtract',
   name: t('flow.keywordExtract'),
+  description: i18n.global.t('flow.keywordExtractDescription'),
   icon: 'lucide:file-key',
   index: 9000,
 };

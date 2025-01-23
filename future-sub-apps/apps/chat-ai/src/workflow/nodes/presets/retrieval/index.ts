@@ -13,6 +13,7 @@ export const nodeDefine: INodeDefine = {
   key: 'Retrieval',
   type: 'Retrieval',
   name: t('flow.retrieval'),
+  description: i18n.global.t('flow.retrievalDescription'),
   icon: 'lucide:book-open-text',
   index: 2000,
 };

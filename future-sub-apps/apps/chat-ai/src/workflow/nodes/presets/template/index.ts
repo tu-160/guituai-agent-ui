@@ -13,6 +13,7 @@ export const nodeDefine: INodeDefine = {
   key: 'Template',
   type: 'Template',
   name: t('flow.template'),
+  description: i18n.global.t('flow.templateDescription'),
   icon: 'lucide:layout-template',
   index: 90_000,
 };

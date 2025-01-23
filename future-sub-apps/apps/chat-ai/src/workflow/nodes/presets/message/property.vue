@@ -74,12 +74,15 @@ const { addMessage, removeMessage } = useBaseLogic(dataProp, handleFlowUtils, cu
 
 <template>
   <CompBaseProperty :close="close" :node-define="nodeDefine">
+    <div>
+      <p style="left: auto">{{t('flow.messageDescription')}}</p>
+    </div>
     <a-form>
-      <a-form-item :label="t('chat.msg')">
+      <a-form-item :label="t('flow.msg')">
         <template v-for="(item, index) in dataProp.params.messages" :key="index">
           <a-form-item>
             <div class="flex">
-              <a-textarea v-model:value="dataProp.params.messages[index]" :rows="4" :placeholder="t('chat.pleaseInput')" />
+              <a-textarea v-model:value="dataProp.params.messages[index]" :rows="4" :placeholder="t('chat.systemMessage')" />
               <Icon class="ml-1 mt-auto cursor-pointer text-2xl" icon="lucide:circle-minus" @click="removeMessage(index)" />
             </div>
           </a-form-item>
@@ -87,7 +90,7 @@ const { addMessage, removeMessage } = useBaseLogic(dataProp, handleFlowUtils, cu
       </a-form-item>
       <div class="flex w-full cursor-pointer items-center justify-center gap-1">
         <a-button class="mx-auto mt-2 w-1/2" @click="addMessage">
-          <div class="flex w-full cursor-pointer items-center justify-center gap-1"><Icon class="text-xl" icon="lucide:plus" /> {{t('flow.add')}}</div>
+          <div class="flex w-full cursor-pointer items-center justify-center gap-1"><Icon class="text-xl" icon="lucide:plus" /> {{t('flow.addMessage')}}</div>
         </a-button>
       </div>
     </a-form>

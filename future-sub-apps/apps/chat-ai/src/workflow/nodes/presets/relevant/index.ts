@@ -13,6 +13,7 @@ export const nodeDefine: INodeDefine = {
   key: 'Relevant',
   type: 'Relevant',
   name: t('flow.relevant'),
+  description: i18n.global.t('flow.relevantDescription'),
   icon: 'lucide:equal-approximately',
   index: 5000,
 };

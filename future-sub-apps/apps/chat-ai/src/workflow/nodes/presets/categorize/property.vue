@@ -23,6 +23,7 @@ interface ICategoryDescription {
     index?: number;
     key: string;
     to?: string;
+    comp_id?: string;
   };
 }
 
@@ -70,6 +71,7 @@ function useBaseLogic(_props: any, _handleFlowUtils: any, _currentNodeModel?: Re
       description: undefined,
       examples: undefined,
       key,
+      comp_id: undefined,
       to: undefined,
     };
   };
@@ -78,7 +80,16 @@ function useBaseLogic(_props: any, _handleFlowUtils: any, _currentNodeModel?: Re
     delete dataProp.value.params.category_description[key];
   };
 
-  const addEdge = () => {
+  const addEdge = (value: any, options: any, node: any) => {
+    debugger
+    console.log(value);
+    console.log(options)
+    for(let i=0; i < options.length; i++) {
+      let option = options[i].value;
+      if(value === option) {
+        node.to = options[i].key + ":" + options[i].value;
+      }
+    }
     console.log('addEdge');
   };
 
@@ -109,6 +120,9 @@ const { addCategoryDescription, removeCategoryDescription, addEdge } = useBaseLo
 
 <template>
   <CompBaseProperty :close="close" :node-define="nodeDefine">
+    <div>
+      <p style="left: auto">{{i18n.global.t('flow.categorizeDescription')}}</p>
+    </div>
     <a-form>
       <CompWidgetQuery v-model:data="dataProp.params.query" />
       <CompWidgetLlm v-model:data="dataProp.params" />
@@ -120,10 +134,10 @@ const { addCategoryDescription, removeCategoryDescription, addEdge } = useBaseLo
       <template v-for="(item, key, index) in dataProp.params.category_description" :key="`${key}-${index}`">
         <a-card class="mt-2 bg-slate-100" size="small">
           <template #extra><Icon class="cursor-pointer text-2xl" icon="lucide:circle-minus" @click="removeCategoryDescription(key as string)" /></template>
-          <a-form-item :label="t('flow.name')">
+          <a-form-item :label="i18n.global.t('flow.name')">
             <a-input
               v-model:value="item.key"
-              :placeholder="t('chat.pleaseInput')"
+              :placeholder="i18n.global.t('common.pleaseInput')"
               @change="
                 () => {
                   delete dataProp.params.category_description[key];
@@ -133,20 +147,21 @@ const { addCategoryDescription, removeCategoryDescription, addEdge } = useBaseLo
             />
           </a-form-item>
           <a-form-item :label="t('flow.description')">
-            <a-textarea v-model:value="item.description" :placeholder="t('chat.pleaseInput')" />
+            <a-textarea v-model:value="item.description" :placeholder="i18n.global.t('common.pleaseInput')" />
           </a-form-item>
           <a-form-item :label="t('flow.examples')">
-            <a-textarea v-model:value="item.examples" :placeholder="t('chat.pleaseInput')" />
+            <a-textarea v-model:value="item.examples" :placeholder="i18n.global.t('common.pleaseInput')" />
           </a-form-item>
           <a-form-item :label="t('flow.to')">
-            <a-select v-model:value="item.to" :options="handleFlowUtils.modelRt.nodesPropertyDataArr" @change="addEdge" />
+            <a-select v-model:value="item.comp_id" :options="handleFlowUtils.modelRt.nodesPropertyDataArr" @change="(value) => addEdge(value, handleFlowUtils.modelRt.nodesPropertyDataArr, item)" />
           </a-form-item>
         </a-card>
       </template>
 
       <div class="flex w-full cursor-pointer items-center justify-center gap-1">
         <a-button class="mx-auto mt-2 w-1/2" @click="addCategoryDescription">
-          <div class="flex w-full cursor-pointer items-center justify-center gap-1"><Icon class="text-xl" icon="lucide:plus" /> {{t('flow.add')}}</div>
+          <div class="flex w-full cursor-pointer items-center justify-center gap-1">
+            <Icon class="text-xl" icon="lucide:plus" /> {{t('flow.add')}}</div>
         </a-button>
       </div>
     </a-form>

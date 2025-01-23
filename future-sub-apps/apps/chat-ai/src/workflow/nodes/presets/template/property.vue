@@ -110,7 +110,7 @@ useBaseLogic(props, handleFlowUtils, currentNodeModel, lfInstance);
   <CompBaseProperty :close="close" :node-define="nodeDefine">
     <a-form layout="vertical">
       <a-form-item :label="t('flow.content')" :tooltips="t('flow.content')">
-        <a-textarea v-model:value="dataProp.params.content" :rows="4" :placeholder="t('chat.pleaseInput')" />
+        <a-textarea v-model:value="dataProp.params.content" :rows="4" :placeholder="t('common.pleaseInput')" />
       </a-form-item>
       <a-form-item>
         <CompWidgetParameter v-model:data="dataProp.params.parameters" />

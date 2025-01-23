@@ -92,7 +92,7 @@ useBaseLogic(props, handleFlowUtils, currentNodeModel, lfInstance);
       <CompWidgetLlm v-model:data="dataProp.params" />
 
       <a-form-item class="mt-6" :label="t('knowledgeConfiguration.prompt')" :tooltips="t('knowledgeConfiguration.promptMessage')">
-        <a-textarea v-model:value="dataProp.params.prompt" :rows="4" :placeholder="t('chat.pleaseInput')" />
+        <a-textarea v-model:value="dataProp.params.prompt" :rows="4" :placeholder="t('common.pleaseInput')" />
       </a-form-item>
       <a-form-item :label="t('flow.cite')" :tooltips="t('flow.citeTip')">
         <a-switch v-model:checked="dataProp.params.cite" />

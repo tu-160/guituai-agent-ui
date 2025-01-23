@@ -178,7 +178,7 @@ const { modelRt, addCondition, addConditionItem } = useBaseLogic(props, handleFl
                   <a-select v-model:value="item2.operator" :options="compareList" class="flex-1" :placeholder="t('common.pleaseSelect')" />
                 </a-form-item>
                 <a-form-item :label="t('flow.value')">
-                  <a-input v-model:value="item2.value" :placeholder="t('chat.pleaseInput')" />
+                  <a-input v-model:value="item2.value" :placeholder="t('common.pleaseInput')" />
                 </a-form-item>
               </a-card>
             </template>

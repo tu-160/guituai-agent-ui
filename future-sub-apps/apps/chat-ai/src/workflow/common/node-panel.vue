@@ -35,6 +35,7 @@ const mousedownFunc = (node: any) => {
           :key="item.id"
           class="m-2 flex items-center rounded-sm border border-solid p-2 hover:shadow-md"
           @mousedown="mousedownFunc(item)"
+          :title="item.description"
         >
           <Icon :icon="item.icon" class="mr-2 text-lg" />
           <span>{{ item.name }}</span>

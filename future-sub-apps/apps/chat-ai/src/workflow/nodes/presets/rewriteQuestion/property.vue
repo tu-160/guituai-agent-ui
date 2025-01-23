@@ -85,7 +85,7 @@ useBaseLogic(props, dataProp, handleFlowUtils, currentNodeModel, lfInstance);
     <a-form>
       <CompWidgetLlm v-model:data="dataProp.params" />
       <a-form-item class="mt-6" :label="t('flow.loop')" :tooltip="t('flow.loopTip')">
-        <a-input-number v-model:value="dataProp.params.loop" min="0" :placeholder="t('chat.pleaseInput')" />
+        <a-input-number v-model:value="dataProp.params.loop" min="0" :placeholder="t('common.pleaseInput')" />
       </a-form-item>
     </a-form>
   </CompBaseProperty>
