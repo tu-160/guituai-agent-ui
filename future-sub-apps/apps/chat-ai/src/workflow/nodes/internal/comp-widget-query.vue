@@ -14,6 +14,7 @@ export interface IQuery {
   type: 'input' | 'reference';
   value?: string;
   component_id?: string;
+  component_label?: string;
 }
 
 const dataProp = defineModel<IQuery[]>('data');
@@ -41,6 +42,15 @@ function useBaseLogic(_props: any, _dataProp: any, _useFlow: any, _currentNodeMo
   return { modelRt, addQueryItem, removeQueryItem };
 }
 
+const typeChange = (value: any, option: any, item: any) => {
+  if(option.key === 'Begin') {
+    item.component_id = 'begin' + '@' + value;
+  } else {
+    item.component_id = option.key + '@' + value;
+  }
+  item.component_label = value;
+}
+
 const lfInstance = inject<Ref<LogicFlow>>('logicFlowInstance');
 const currentNodeModel = inject<Ref<Model.BaseModel>>('currentNodeInfo');
 const useFlow = useHandleFlow(currentNodeModel, lfInstance);
@@ -63,7 +73,8 @@ const { modelRt, addQueryItem, removeQueryItem } = useBaseLogic({}, dataProp, us
             @change="() => (item.value = '') || (item.component_id = '')"
           />
           <a-input v-if="item.type === 'input'" v-model:value="item.value" class="w-1/2" :placeholder="t('common.pleaseInput')" />
-          <a-select v-else v-model:value="item.component_id" :options="useFlow.modelRt.nodesPropertyDataArr" class="w-1/2" :placeholder="t('common.pleaseSelect')" />
+          <a-select v-else v-model:value="item.component_label" :options="useFlow.modelRt.nodesPropertyDataArr"
+                    class="w-1/2" :placeholder="t('common.pleaseSelect')" @change="(value, option) => typeChange(value, option, item)" />
           <Icon class="cursor-pointer text-2xl" icon="lucide:circle-minus" @click="removeQueryItem(index)" />
         </div>
       </template>
