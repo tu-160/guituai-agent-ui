@@ -138,10 +138,10 @@ const { validate, validateInfos } = useForm(
 );
 const handleCancel = () => {};
 const handleOk = () => {
-  debugger
+
   validate()
     .then(async () => {
-      debugger
+
       const params = {
         name: modelRy.name,
       };
@@ -155,20 +155,19 @@ const handleOk = () => {
       };
 
       let isExist: boolean = false;
-      debugger
+
       await K0001(searchParams)
           .then((res) => {
-            debugger
+
             modelRef.knowledgeList = res.data.kbs;
             if(modelRef.knowledgeList.length > 0) {
               isExist = true;
             }
           })
           .catch((error) => {
-            debugger
             console.log(error)
           });
-      debugger
+
       if(isExist) {
         Modal.confirm({
           title: t('common.tip_title'),

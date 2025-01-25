@@ -4,7 +4,7 @@ import type { Model } from '@logicflow/core';
 import { i18n } from "@/locales/i18n";
 const t = i18n.global.t;
 
-import { inject, onMounted, reactive, type Ref } from 'vue';
+import { provide, inject, onMounted, reactive, type Ref } from 'vue';
 
 import { Icon } from '@future-core/icons';
 
@@ -119,6 +119,7 @@ const getRerankList = async () => {
 onMounted(() => {
   getRerankList();
 });
+
 </script>
 
 <template>
@@ -136,7 +137,7 @@ onMounted(() => {
       <a-form-item :label="t('chat.topP')" :tooltip="t('chat.topPTip')">
         <a-slider v-model:value="dataProp.top_p" :max="1" :min="0" :step="0.1" />
       </a-form-item>
-      <a-form-item label="t('chat.presencePenalty')" :tooltip="t('chat.presencePenaltyTip')">
+      <a-form-item :label="t('chat.presencePenalty')" :tooltip="t('chat.presencePenaltyTip')">
         <a-slider v-model:value="dataProp.presence_penalty" :max="1" :min="0" :step="0.1" />
       </a-form-item>
       <a-form-item :label="t('chat.frequencyPenalty')" :tooltip="t('chat.frequencyPenaltyTip')">

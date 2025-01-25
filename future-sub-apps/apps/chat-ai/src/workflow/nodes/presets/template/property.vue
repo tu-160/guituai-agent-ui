@@ -108,6 +108,9 @@ useBaseLogic(props, handleFlowUtils, currentNodeModel, lfInstance);
 
 <template>
   <CompBaseProperty :close="close" :node-define="nodeDefine">
+    <div>
+      <p style="left: auto">{{t('flow.templateDescription')}}</p>
+    </div>
     <a-form layout="vertical">
       <a-form-item :label="t('flow.content')" :tooltips="t('flow.content')">
         <a-textarea v-model:value="dataProp.params.content" :rows="4" :placeholder="t('common.pleaseInput')" />

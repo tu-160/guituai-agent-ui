@@ -73,6 +73,9 @@ useBaseLogic(props, dataProp, handleFlowUtils, currentNodeModel, lfInstance);
 
 <template>
   <CompBaseProperty :close="close" :node-define="nodeDefine">
+    <div>
+      <p style="left: auto">{{t('flow.keywordDescription')}}</p>
+    </div>
     <a-form>
       <CompWidgetQuery v-model:data="dataProp.params.query" />
       <CompWidgetLlm v-model:data="dataProp.params" />

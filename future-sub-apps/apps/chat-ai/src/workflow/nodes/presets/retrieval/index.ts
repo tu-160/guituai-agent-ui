@@ -28,6 +28,7 @@ export const getDataDefault = () =>
       similarity_threshold: 0.2, // 相似度阈值
       keywords_similarity_weight: 0.3, // 关键字相似度权重
       rerank_id: '', // Rerank模型
+      rerank_name: '',
       top_k: 1024,
       top_n: 8,
       query: [],

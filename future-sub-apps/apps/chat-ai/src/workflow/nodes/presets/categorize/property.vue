@@ -81,16 +81,15 @@ function useBaseLogic(_props: any, _handleFlowUtils: any, _currentNodeModel?: Re
   };
 
   const addEdge = (value: any, options: any, node: any) => {
-    debugger
-    console.log(value);
-    console.log(options)
+    // console.log(value);
+    // console.log(options)
     for(let i=0; i < options.length; i++) {
       let option = options[i].value;
       if(value === option) {
         node.to = options[i].key + ":" + options[i].value;
       }
     }
-    console.log('addEdge');
+    // console.log('addEdge');
   };
 
   const init = () => {

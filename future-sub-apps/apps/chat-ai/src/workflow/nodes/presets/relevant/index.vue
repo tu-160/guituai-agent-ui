@@ -27,8 +27,8 @@ export default defineComponent({
   mounted() {
     // 添加默认数据
     this.$nextTick(() => {
-      this.setNodeProperty('a1Top', getElementTop(this.$refs.topDomRef as HTMLElement, this.$refs.anchor1DomRef as HTMLElement));
-      this.setNodeProperty('a2Top', getElementTop(this.$refs.topDomRef as HTMLElement, this.$refs.anchor2DomRef as HTMLElement));
+      // this.setNodeProperty('a1Top', getElementTop(this.$refs.topDomRef as HTMLElement, this.$refs.anchor1DomRef as HTMLElement));
+      // this.setNodeProperty('a2Top', getElementTop(this.$refs.topDomRef as HTMLElement, this.$refs.anchor2DomRef as HTMLElement));
     });
   },
   methods: {},

@@ -751,7 +751,6 @@ export default {
     nameRequiredMsg: '名称不能为空',
     nameRepeatedMsg: '名称不能重复',
     keywordExtract: '关键词',
-    keywordExtractDescription: `该组件用于从用户的问题中提取关键词。Top N指定需要提取的关键词数量。`,
     baidu: '百度',
     baiduDescription: `此组件用于从 www.baidu.com 获取搜索结果。通常，它作为知识库的补充。Top N 指定您需要调整的搜索结果数量。`,
     duckDuckGo: 'DuckDuckGo',

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type LogicFlow from '@logicflow/core';
 import type { Model } from '@logicflow/core';
+import { i18n } from "@/locales/i18n";
+const t = i18n.global.t;
 
 import { inject, reactive, type Ref } from 'vue';
 
@@ -51,5 +53,9 @@ useBaseLogic(props, dataProp, useFlow, currentNodeModel, lfInstance);
 </script>
 
 <template>
-  <CompBaseProperty :close="close" :node-define="nodeDefine" />
+  <CompBaseProperty :close="close" :node-define="nodeDefine">
+    <div>
+      <p style="left: auto">{{t('flow.concentratorDescription')}}</p>
+    </div>
+  </CompBaseProperty>
 </template>

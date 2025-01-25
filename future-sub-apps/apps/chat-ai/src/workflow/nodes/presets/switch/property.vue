@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { LogicFlow, Model } from '@logicflow/core';
 import { i18n } from "@/locales/i18n";
-const t = i18n.global.t;
 
 import type { Ref } from 'vue';
 import { inject, reactive, watch, watchEffect } from 'vue';
@@ -25,23 +24,23 @@ const props = withDefaults(
 );
 
 const compareList = [
-  { value: 'empty', label: t('flow.switchOperatorOptions.empty')},
-  { value: 'not empty', label: t('flow.switchOperatorOptions.notEmpty') },
-  { value: 'contains', label: t('flow.switchOperatorOptions.contains') },
-  { value: 'not contains', label: t('flow.switchOperatorOptions.notContains') },
-  { value: '=', label: t('flow.switchOperatorOptions.equal') },
-  { value: '≠', label: t('flow.switchOperatorOptions.notEqual') },
-  { value: '≥', label: t('flow.switchOperatorOptions.ge') },
-  { value: '>', label: t('flow.switchOperatorOptions.gt') },
-  { value: '≤', label: t('flow.switchOperatorOptions.le') },
-  { value: '<', label: t('flow.switchOperatorOptions.lt') },
-  { value: 'start with', label: t('flow.switchOperatorOptions.startWith') },
-  { value: 'end with', label: t('flow.switchOperatorOptions.endWith') },
+  { value: 'empty', label: i18n.global.t('flow.switchOperatorOptions.empty')},
+  { value: 'not empty', label: i18n.global.t('flow.switchOperatorOptions.notEmpty') },
+  { value: 'contains', label: i18n.global.t('flow.switchOperatorOptions.contains') },
+  { value: 'not contains', label: i18n.global.t('flow.switchOperatorOptions.notContains') },
+  { value: '=', label: i18n.global.t('flow.switchOperatorOptions.equal') },
+  { value: '≠', label: i18n.global.t('flow.switchOperatorOptions.notEqual') },
+  { value: '≥', label: i18n.global.t('flow.switchOperatorOptions.ge') },
+  { value: '>', label: i18n.global.t('flow.switchOperatorOptions.gt') },
+  { value: '≤', label: i18n.global.t('flow.switchOperatorOptions.le') },
+  { value: '<', label: i18n.global.t('flow.switchOperatorOptions.lt') },
+  { value: 'start with', label: i18n.global.t('flow.switchOperatorOptions.startWith') },
+  { value: 'end with', label: i18n.global.t('flow.switchOperatorOptions.endWith') },
 ] as const;
 
 const operatorList = [
-  { value: 'and', label: t('flow.switchLogicOperatorOptions.and') },
-  { value: 'or', label: t('flow.switchLogicOperatorOptions.or') },
+  { value: 'and', label: i18n.global.t('flow.switchLogicOperatorOptions.and') },
+  { value: 'or', label: i18n.global.t('flow.switchLogicOperatorOptions.or') },
 ];
 
 interface IItem {
@@ -154,37 +153,40 @@ const { modelRt, addCondition, addConditionItem } = useBaseLogic(props, handleFl
 
 <template>
   <CompBaseProperty :close="close" :node-define="nodeDefine">
+    <div>
+      <p style="left: auto">{{ i18n.global.t('flow.switchDescription') }}</p>
+    </div>
     <a-form layout="vertical">
       <template v-for="(item, index) in modelRt.params.conditions" :key="item">
         <a-card class="mt-2" size="small" title="case 1">
           <template #extra>
             <div class="cursor-pointer"><Icon class="mr-2 text-lg" icon="lucide:x" /></div>
           </template>
-          <a-form-item :label="t('flow.operator')">
-            <a-select v-model:value="item.logical_operator" :options="operatorList" class="flex-1" :placeholder="t('common.pleaseSelect')" />
+          <a-form-item :label="i18n.global.t('flow.operator')">
+            <a-select v-model:value="item.logical_operator" :options="operatorList" class="flex-1" :placeholder="i18n.global.t('common.pleaseSelect')" />
           </a-form-item>
-          <a-form-item :label="t('flow.to')">
-            <a-select v-model:value="item.to" :options="modelRt.nodeData" class="flex-1" :placeholder="t('common.pleaseSelect')" />
+          <a-form-item :label="i18n.global.t('flow.to')">
+            <a-select v-model:value="item.to" :options="modelRt.nodeData" class="flex-1" :placeholder="i18n.global.t('common.pleaseSelect')" />
           </a-form-item>
 
-          <a-form-item :label="t('flow.switch')">
+          <a-form-item :label="i18n.global.t('flow.switch')">
             <template v-for="item2 in item.items" :key="item2">
               <a-card class="mt-2 bg-slate-100" size="small">
                 <template #extra><Icon class="cursor-pointer text-2xl" icon="lucide:circle-minus" /></template>
-                <a-form-item :label="t('flow.componentId')">
-                  <a-select v-model:value="item2.cpn_id" :options="modelRt.nodeData" class="flex-1" :placeholder="t('common.pleaseSelect')" />
+                <a-form-item :label="i18n.global.t('flow.componentId')">
+                  <a-select v-model:value="item2.cpn_id" :options="modelRt.nodeData" class="flex-1" :placeholder="i18n.global.t('common.pleaseSelect')" />
                 </a-form-item>
-                <a-form-item :label="t('flow.operator')">
-                  <a-select v-model:value="item2.operator" :options="compareList" class="flex-1" :placeholder="t('common.pleaseSelect')" />
+                <a-form-item :label="i18n.global.t('flow.operator')">
+                  <a-select v-model:value="item2.operator" :options="compareList" class="flex-1" :placeholder="i18n.global.t('common.pleaseSelect')" />
                 </a-form-item>
-                <a-form-item :label="t('flow.value')">
-                  <a-input v-model:value="item2.value" :placeholder="t('common.pleaseInput')" />
+                <a-form-item :label="i18n.global.t('flow.value')">
+                  <a-input v-model:value="item2.value" :placeholder="i18n.global.t('common.pleaseInput')" />
                 </a-form-item>
               </a-card>
             </template>
 
             <div class="mt-2 flex items-center justify-center">
-              <a-button type="link" @click="addConditionItem(index)"> {{ t('flow.addCondition') }} </a-button>
+              <a-button type="link" @click="addConditionItem(index)"> {{ i18n.global.t('flow.addCondition') }} </a-button>
             </div>
           </a-form-item>
         </a-card>
@@ -192,12 +194,12 @@ const { modelRt, addCondition, addConditionItem } = useBaseLogic(props, handleFl
     </a-form>
 
     <div class="mt-2 flex items-center justify-center">
-      <a-button type="link" @click="addCondition"> {{ t('flow.addCase') }} </a-button>
+      <a-button type="link" @click="addCondition"> {{ i18n.global.t('flow.addCase') }} </a-button>
     </div>
 
     <a-card class="bg-slate-100" size="small">
       <a-form-item label="ELSE">
-        <a-select v-model:value="modelRt.params.end_cpn_id" :options="modelRt.nodeData" class="flex-1" :placeholder="t('common.pleaseSelect')" />
+        <a-select v-model:value="modelRt.params.end_cpn_id" :options="modelRt.nodeData" class="flex-1" :placeholder="i18n.global.t('common.pleaseSelect')" />
       </a-form-item>
     </a-card>
   </CompBaseProperty>

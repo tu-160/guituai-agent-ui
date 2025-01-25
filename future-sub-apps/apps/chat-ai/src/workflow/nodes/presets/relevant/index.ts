@@ -39,35 +39,35 @@ export const getDataDefault = (): IRelevantComponent => ({
 
 export default function registerConnect(lf: LogicFlow) {
   class CustomNode extends BaseVueNodeModel {
-    override getDefaultAnchor() {
-      const { id, x, y, width, height, properties } = this;
-      const { a1Top, a2Top } = properties as { a1Top: number; a2Top: number };
-      const anchors = [];
-      anchors.push(
-        {
-          x: x - width / 2,
-          y,
-          id: `${id}_incoming`,
-          type: 'incoming',
-        },
-        {
-          x: x + width / 2,
-          y: y - height / 2 + a1Top + 10,
-          id: `${id}_outgoing_yes`,
-          type: 'outgoing',
-          tag: 'yes',
-        },
-        {
-          x: x + width / 2,
-          y: y - height / 2 + a2Top + 10,
-          id: `${id}_outgoing_no`,
-          type: 'outgoing',
-          tag: 'no',
-        },
-      );
-
-      return anchors;
-    }
+    // override getDefaultAnchor() {
+    //   const { id, x, y, width, height, properties } = this;
+    //   const { a1Top, a2Top } = properties as { a1Top: number; a2Top: number };
+    //   const anchors = [];
+    //   anchors.push(
+    //     {
+    //       x: x - width / 2,
+    //       y,
+    //       id: `${id}_incoming`,
+    //       type: 'incoming',
+    //     },
+    //     {
+    //       x: x + width / 2,
+    //       y: y - height / 2 + a1Top + 10,
+    //       id: `${id}_outgoing_yes`,
+    //       type: 'outgoing',
+    //       tag: 'yes',
+    //     },
+    //     {
+    //       x: x + width / 2,
+    //       y: y - height / 2 + a2Top + 10,
+    //       id: `${id}_outgoing_no`,
+    //       type: 'outgoing',
+    //       tag: 'no',
+    //     },
+    //   );
+    //
+    //   return anchors;
+    // }
   }
 
   // 注册自定义 vue 节点

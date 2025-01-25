@@ -4,12 +4,20 @@ import type { Model } from '@logicflow/core';
 import { i18n } from "@/locales/i18n";
 const t = i18n.global.t;
 
-import { inject, reactive, type Ref, watch } from 'vue';
+import {inject, provide, reactive, type Ref, watch} from 'vue';
 
+import { K0005 } from '@/api/modules/a3';
 import { useHandleFlow } from '../../hook-property';
 import CompBaseProperty from '../../internal/comp-base-property.vue';
+
+import { getModelList, modelRy as modelList } from '../../../common/llm';
+import { getKbList, kbRt } from '../../../common/data';
+
 import CompWidgetQuery, { type IQuery } from '../../internal/comp-widget-query.vue';
 import { nodeDefine } from './index';
+import { Form, message } from 'ant-design-vue';
+
+const useForm = Form.useForm;
 
 export interface IKnowledage {
   component_name: string;
@@ -20,6 +28,7 @@ export interface IKnowledage {
     keywords_similarity_weight: number;
     query: IQuery[];
     rerank_id: string;
+    rerank_name: string;
     similarity_threshold: number;
     top_k: number;
     top_n: number;
@@ -70,13 +79,41 @@ function useBaseLogic(_props: any, _useFlow: any, _currentNodeModel?: Ref<Model.
   return { modelRt };
 }
 
+// const { validateInfos } = useForm(
+//     dataProp,
+//     reactive({
+//       kb_ids: [
+//         {
+//           required: true,
+//           message: t('common.required'),
+//         },
+//       ],
+//     }),
+// );
+
+const rerankModelChange = (value, options) => {
+  dataProp.value.params.rerank_id = value + '@' + options.fid;
+}
+
+// 注入来自子组件的 modelRy 和 getRerankList
+const llms = getModelList();
+
+// const kbRt = reactive({
+//   kbList: [],
+// });
+
+getKbList();
+
 const lfInstance = inject<Ref<LogicFlow>>('logicFlowInstance');
 const currentNodeModel = inject<Ref<Model.BaseModel>>('currentNodeInfo');
 const handleFlowUtils = useHandleFlow(currentNodeModel, lfInstance);
 useBaseLogic(props, handleFlowUtils, currentNodeModel, lfInstance);
+
+
 </script>
 
 <template>
+
   <CompBaseProperty :close="close" :node-define="nodeDefine">
     <div>
       <p style="left: auto">{{i18n.global.t('flow.retrievalDescription')}}</p>
@@ -93,8 +130,14 @@ useBaseLogic(props, handleFlowUtils, currentNodeModel, lfInstance);
       <a-form-item :label="t('chat.topN')" :tooltips="t('chat.topNTip')">
         <a-slider v-model:value="dataProp.params.top_n" :max="30" :min="0" :step="1" />
       </a-form-item>
+      <a-form-item :label="t('setting.rerankModel')" :tooltips="t('setting.rerankModelTip')">
+        <a-select v-model:value="dataProp.params.rerank_name" :options="modelList.rerankList" @change="(value, options) => rerankModelChange(value, options)" />
+      </a-form-item>
       <a-form-item :label="t('knowledgeDetails.topK')" :tooltips="t('knowledgeDetails.topKTip')">
-        <a-slider v-model:value="dataProp.params.top_k" :max="30" :min="0" :step="1" />
+        <a-slider v-model:value="dataProp.params.top_k" :max="2048" :min="0" :step="1" />
+      </a-form-item>
+      <a-form-item :label="t('chat.knowledgeBases')" :tooltips="t('knowledgeDetails.knowledgeBasesTip')">
+        <a-select v-model:value="dataProp.params.kb_ids" :options="kbRt.kbList" mode="multiple"/>
       </a-form-item>
       <a-form-item :label="t('chat.emptyResponse')" :tooltips="t('chat.emptyResponseTip')">
         <a-textarea v-model:value="dataProp.params.empty_response" :rows="4" :placeholder="t('common.pleaseInput')" />

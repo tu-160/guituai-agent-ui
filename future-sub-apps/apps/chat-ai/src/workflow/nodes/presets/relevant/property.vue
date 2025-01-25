@@ -143,6 +143,9 @@ const { getNodeDataArr } = useBaseLogic(props, dataProp, handleFlowUtils, curren
 
 <template>
   <CompBaseProperty :close="close" :node-define="nodeDefine">
+    <div>
+      <p style="left: auto">{{t('flow.relevantDescription')}}</p>
+    </div>
     <a-form>
       <CompWidgetLlm v-model:data="dataProp.params" />
 
