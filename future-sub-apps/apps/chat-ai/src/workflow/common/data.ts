@@ -6,7 +6,7 @@ export const kbRt = reactive({
 });
 
 export const getKbList = async () => {
-  debugger
+
   try {
     const params = {
       page: 1,

@@ -136,7 +136,7 @@ useBaseLogic(props, handleFlowUtils, currentNodeModel, lfInstance);
       <a-form-item :label="t('knowledgeDetails.topK')" :tooltips="t('knowledgeDetails.topKTip')">
         <a-slider v-model:value="dataProp.params.top_k" :max="2048" :min="0" :step="1" />
       </a-form-item>
-      <a-form-item :label="t('chat.knowledgeBases')" :tooltips="t('knowledgeDetails.knowledgeBasesTip')">
+      <a-form-item :label="t('chat.knowledgeBases')" :tooltips="t('chat.knowledgeBasesTip')">
         <a-select v-model:value="dataProp.params.kb_ids" :options="kbRt.kbList" mode="multiple"/>
       </a-form-item>
       <a-form-item :label="t('chat.emptyResponse')" :tooltips="t('chat.emptyResponseTip')">

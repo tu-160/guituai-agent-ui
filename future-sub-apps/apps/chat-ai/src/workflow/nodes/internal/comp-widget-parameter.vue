@@ -32,6 +32,7 @@ function useBaseLogic(_props: any, _dataProp: any, _useFlow: any, _currentNodeMo
       component_id: '',
       id: '',
       key: '',
+      label: '',
     });
   };
 
@@ -57,7 +58,14 @@ function useBaseLogic(_props: any, _dataProp: any, _useFlow: any, _currentNodeMo
     });
   };
 
+  const initDataProp = () => {
+    if(_dataProp.value === undefined) {
+      _dataProp.value = [];
+    }
+  };
+
   init();
+  initDataProp();
   return { modelRt, addParameter, removeParameter };
 }
 
