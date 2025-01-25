@@ -148,7 +148,7 @@ function useBaseLogic(_props: any, _handleFlowUtils: any, _currentNodeInfo?: Ref
 const lfInstance = inject<Ref<LogicFlow>>('logicFlowInstance');
 const currentNodeModel = inject<Ref<Model.BaseModel>>('currentNodeInfo');
 const handleFlowUtils = useHandleFlow(currentNodeModel, lfInstance);
-const { modelRt, addCondition, addConditionItem } = useBaseLogic(props, handleFlowUtils, currentNodeModel, lfInstance);
+const { modelRt, addCondition, removeCondition, addConditionItem, removeConditionItem } = useBaseLogic(props, handleFlowUtils, currentNodeModel, lfInstance);
 </script>
 
 <template>
@@ -158,9 +158,9 @@ const { modelRt, addCondition, addConditionItem } = useBaseLogic(props, handleFl
     </div>
     <a-form layout="vertical">
       <template v-for="(item, index) in modelRt.params.conditions" :key="item">
-        <a-card class="mt-2" size="small" title="case 1">
+        <a-card class="mt-2" size="small" :title="`case ${index + 1}`">
           <template #extra>
-            <div class="cursor-pointer"><Icon class="mr-2 text-lg" icon="lucide:x" /></div>
+            <div class="cursor-pointer"><Icon class="mr-2 text-lg" icon="lucide:x" @click="removeCondition(index)"/></div>
           </template>
           <a-form-item :label="i18n.global.t('flow.operator')">
             <a-select v-model:value="item.logical_operator" :options="operatorList" class="flex-1" :placeholder="i18n.global.t('common.pleaseSelect')" />
@@ -170,9 +170,9 @@ const { modelRt, addCondition, addConditionItem } = useBaseLogic(props, handleFl
           </a-form-item>
 
           <a-form-item :label="i18n.global.t('flow.switch')">
-            <template v-for="item2 in item.items" :key="item2">
+            <template v-for="(item2, idx) in item.items" :key="item2">
               <a-card class="mt-2 bg-slate-100" size="small">
-                <template #extra><Icon class="cursor-pointer text-2xl" icon="lucide:circle-minus" /></template>
+                <template #extra><Icon class="cursor-pointer text-2xl" icon="lucide:circle-minus" @click="removeConditionItem(index, idx)" /></template>
                 <a-form-item :label="i18n.global.t('flow.componentId')">
                   <a-select v-model:value="item2.cpn_id" :options="modelRt.nodeData" class="flex-1" :placeholder="i18n.global.t('common.pleaseSelect')" />
                 </a-form-item>
