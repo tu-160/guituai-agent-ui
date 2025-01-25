@@ -66,9 +66,11 @@ function useBaseLogic(
   };
 
   const addEdge = (targetNodeId: string, tag: string) => {
+    debugger
     const nodeID = _currentNodeModel?.value.id;
     if (!nodeID) return;
-    const startPoint = (_lfInstance?.value.getModelById(nodeID || '') as any).getDefaultAnchor().find((item: any) => item.tag === tag);
+    // const startPoint = (_lfInstance?.value.getModelById(nodeID || '') as any).getDefaultAnchor().find((item: any) => item.tag === tag);
+    const startPoint = (_lfInstance?.value.getModelById(nodeID || '') as any).getDefaultAnchor()[1];
     const endPoint = (_lfInstance?.value.getModelById(targetNodeId || '') as any).getDefaultAnchor()[0];
     if (!startPoint || !endPoint) {
       console.error("can't find startPoint or endPoint");
@@ -108,7 +110,8 @@ function useBaseLogic(
             _handleFlowUtils.deleteEdge(oldEdge.id);
           }
         }
-        addEdge(_yes as string, 'yes');
+        debugger
+        addEdge(_yes.split(':')[1] as string, 'yes');
       },
       { deep: true },
     );
@@ -124,7 +127,8 @@ function useBaseLogic(
             _handleFlowUtils.deleteEdge(oldEdge.id);
           }
         }
-        addEdge(_no as string, 'no');
+        debugger
+        addEdge(_no.split(':')[1] as string, 'no');
       },
       { deep: true },
     );
@@ -151,10 +155,11 @@ const { getNodeDataArr } = useBaseLogic(props, dataProp, handleFlowUtils, curren
 
       <a-form-item class="mt-6" :label="t('flow.yes')">
         <a-select
-          v-model:value="dataProp.params.yes"
+          v-model:value="dataProp.params.yesLabel"
           :options="getNodeDataArr(dataProp.params.no)"
           @change="
             (_value: string, option: any) => {
+              dataProp.params.yes= option.key + ':' + _value;
               dataProp.params.yesLabel = option.label;
             }
           "
@@ -162,10 +167,11 @@ const { getNodeDataArr } = useBaseLogic(props, dataProp, handleFlowUtils, curren
       </a-form-item>
       <a-form-item class="mt-6" :label="t('flow.no')">
         <a-select
-          v-model:value="dataProp.params.no"
+          v-model:value="dataProp.params.noLabel"
           :options="getNodeDataArr(dataProp.params.yes)"
           @change="
             (_value: string, option: any) => {
+              dataProp.params.no= option.key + ':' + _value;
               dataProp.params.noLabel = option.label;
             }
           "

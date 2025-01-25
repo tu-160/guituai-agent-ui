@@ -30,10 +30,12 @@ export const getDataDefault = (): IRelevantComponent => ({
     frequencyPenaltyEnabled: false,
     maxTokensEnabled: false,
     no: '',
+    noLabel: '',
     presencePenaltyEnabled: false,
     temperatureEnabled: false,
     topPEnabled: false,
     yes: '',
+    yesLabel: '',
   },
 });
 
