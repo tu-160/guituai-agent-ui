@@ -66,7 +66,7 @@ function useBaseLogic(
   };
 
   const addEdge = (targetNodeId: string, tag: string) => {
-    debugger
+
     const nodeID = _currentNodeModel?.value.id;
     if (!nodeID) return;
     // const startPoint = (_lfInstance?.value.getModelById(nodeID || '') as any).getDefaultAnchor().find((item: any) => item.tag === tag);
@@ -110,7 +110,7 @@ function useBaseLogic(
             _handleFlowUtils.deleteEdge(oldEdge.id);
           }
         }
-        debugger
+
         addEdge(_yes.split(':')[1] as string, 'yes');
       },
       { deep: true },
@@ -127,7 +127,7 @@ function useBaseLogic(
             _handleFlowUtils.deleteEdge(oldEdge.id);
           }
         }
-        debugger
+
         addEdge(_no.split(':')[1] as string, 'no');
       },
       { deep: true },
