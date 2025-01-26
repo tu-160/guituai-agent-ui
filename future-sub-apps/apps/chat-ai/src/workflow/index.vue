@@ -375,7 +375,6 @@ function useBizFlow() {
   };
 
   const fetchSave = async () => {
-
     const parmas = modelRt.flowData;
     parmas.dsl.graph = getLFData();
     if (parmas.id === null || parmas.id === '') {
@@ -388,11 +387,12 @@ function useBizFlow() {
     //   });
     // }
 
-    for(let key in parmas.dsl.components) { // Note节点不能参与计算，将Note节点从dsl的组件中删除
+    for(let key in parmas.dsl.components) { // Note节点不能参与计算，将Note节点从dsl中删除
       let component = parmas.dsl.components[key];
       if(component.obj.component_name === 'Note') {
         delete parmas.dsl.components[key];
       }
+      console.log(component);
     }
 
     await G0004(parmas).then((res) => {
@@ -445,7 +445,8 @@ const getRun = () => {
 <template>
   <div ref="mainDomRef" class="workflow-container h-[calc(100vh-64px)] w-full">
     <div class="workflow-toolbar">
-      <a-button @click="getRun">{{t('flow.run')}}</a-button>
+      <div> {{ modelRt.flowData.title }} </div>
+      <!-- <a-button @click="getRun">{{t('flow.run')}}</a-button> -->
       <a-button @click="callDebugModal(modelRt.flowData)">{{t('flow.debug')}}</a-button>
       <debugModal ref="debugModalRef"></debugModal>
       <a-button type="primary" @click="fetchSave">{{t('flow.save')}}</a-button>

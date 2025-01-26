@@ -4,7 +4,7 @@ import { type LocationQueryRaw, type RouteParamsGeneric, type Router, useRouter 
 
 import { ScrollArea } from '@future-core/shadcn-ui';
 
-import { G0001, G0002 } from '@/api';
+import {G0001, G0002, G0004} from '@/api';
 import BaseContainer from '@/components/base-container/index.vue';
 import {CalendarOutlined, DeleteOutlined, EllipsisOutlined, PlusOutlined, UserOutlined} from '@ant-design/icons-vue';
 import { Form, message, Modal } from 'ant-design-vue';
@@ -91,6 +91,7 @@ const addCreateflow = () => {
   modelRt.isModalOpen = true;
 };
 const handleCancel = () => {};
+
 const handleOk = () => {
   validate()
     .then(async () => {
@@ -109,7 +110,66 @@ const handleOk = () => {
         });
         return;
       }
-      toPage('Createflow', { title: modelRy.title }, { title: modelRy.title });
+
+      const createParams = {
+        title: modelRy.title,
+        dsl: {
+          answer: [],
+          components: {
+            begin: {
+              downstream: [],
+              upstream: [],
+              obj: {
+                component_name: 'Begin',
+                params: {
+                  prologue: '\u4f60\u597d\uff01\u6211\u662f\u4f60\u7684\u52a9\u7406\uff0c\u6709\u4ec0\u4e48\u53ef\u4ee5\u5e2e\u5230\u4f60\u7684\u5417\uff1f'
+                }
+              }
+            }
+          },
+          graph: {
+            edges: [],
+            nodes: [
+              {
+                id: 'a5d595cf-382b-4b81-96b3-08ec25bb207f',
+                type: 'begin',
+                x: 360,
+                y: 570,
+                properties: {
+                  variables: [],
+                  desc: '',
+                  width: 220,
+                  height: 40,
+                  rawWidth: 220,
+                  rawHeight: 40,
+                  component_id: 'begin:a5d595cf-382b-4b81-96b3-08ec25bb207f',
+                  data: {
+                    key: 'Begin',
+                    label: '\u5f00\u59cb_0',
+                    value: 'a5d595cf-382b-4b81-96b3-08ec25bb207f',
+                    form: {
+                      component_name: 'Begin',
+                      params: {
+                        prologue: '\u4f60\u597d\uff01\u6211\u662f\u4f60\u7684\u52a9\u7406\uff0c\u6709\u4ec0\u4e48\u53ef\u4ee5\u5e2e\u5230\u4f60\u7684\u5417\uff1f'
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+          },
+          history: [],
+          messages: [],
+          path: [],
+          reference: [],
+        }
+      }
+      let createResp: any;
+      await G0004(createParams).then((res) => {
+        createResp = {...res.data};
+      });
+
+      toPage('Createflow', { title: modelRy.title, id: createResp.id }, { title: modelRy.title, id: createResp.id });
     })
     .catch((error) => {
       console.log('error', error);
@@ -163,7 +223,7 @@ const handleOk = () => {
                   <div>
                     <span class="break-all text-2xl font-semibold text-gray-900">{{ item.title }}</span>
                   </div>
-                  <div @click="toPage('Createflow', { id: item.id }, { id: item.id })">
+                  <div @click="toPage('Createflow', { id: item.id, title: item.title }, { id: item.id, title: item.title })">
                     <div class="flex items-center gap-2">
                       <CalendarOutlined class="text-xl leading-3" />
                       <span> {{ format(item.update_time, 'yyyy/MM/dd HH:mm:ss') }}</span>
