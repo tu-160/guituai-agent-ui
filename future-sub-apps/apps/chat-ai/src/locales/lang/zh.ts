@@ -1035,6 +1035,7 @@ export default {
     keyword: '关键字',
     note: '注释',
     noteDescription: '注释',
+    noteDescription2: '此组件仅用作注解标签，不参与计算。',
     notePlaceholder: '请输入注释',
     invoke: 'Invoke',
     invokeDescription: '该组件可以调用远程端点调用。将其他组件的输出作为参数或设置常量参数来调用远程函数。',

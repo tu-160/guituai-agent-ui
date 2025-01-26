@@ -387,6 +387,14 @@ function useBizFlow() {
     //     return [key];
     //   });
     // }
+
+    for(let key in parmas.dsl.components) { // Note节点不能参与计算，将Note节点从dsl的组件中删除
+      let component = parmas.dsl.components[key];
+      if(component.obj.component_name === 'Note') {
+        delete parmas.dsl.components[key];
+      }
+    }
+
     await G0004(parmas).then((res) => {
       modelRt.flowData = { ...res.data };
       message.success(t('flow.saved'));
