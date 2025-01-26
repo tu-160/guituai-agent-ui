@@ -74,18 +74,17 @@ interface Result {
   options: Option[];
 }
 
-const modelRy = reactive<{ rerankList: Result[] }>({
-  rerankList: [],
+const modelRy = reactive<{ llmList: Result[] }>({
+  llmList: [],
 });
 const processData = (data: Record<string, Model1[]>): Result[] => {
   const result: Result[] = [];
-
   for (const [provider, models] of Object.entries(data)) {
     // 过滤出 model_type 为 "rerank" 的模型
-    const rerankModels = models.filter((model) => model.model_type === 'chat' && model.available);
+    const llmModels = models.filter((model) => model.model_type === 'chat' && model.available);
 
-    if (rerankModels.length > 0) {
-      const options: Option[] = rerankModels.map((model) => ({
+    if (llmModels.length > 0) {
+      const options: Option[] = llmModels.map((model) => ({
         value: model.llm_name,
         label: model.llm_name,
         available: model.available,
@@ -110,14 +109,14 @@ const processData = (data: Record<string, Model1[]>): Result[] => {
 
   return result;
 };
-const getRerankList = async () => {
+const getLlmList = async () => {
   await K0005({}).then((res) => {
     const resData = res.data;
-    modelRy.rerankList = processData(resData);
+    modelRy.llmList = processData(resData);
   });
 };
 onMounted(() => {
-  getRerankList();
+  getLlmList();
 });
 
 </script>
@@ -129,7 +128,10 @@ onMounted(() => {
     </template>
     <a-collapse-panel key="2" :header="`${t('chat.model')}: ${dataProp.llm_id}`">
       <a-form-item :label="t('chat.model')">
-        <a-select v-model:value="dataProp.llm_id" :options="modelRy.rerankList" />
+        <a-select v-model:value="dataProp.llm_id.split('@')[0]" :options="modelRy.llmList" @change="(value: any, option: any) => {
+          dataProp.llm_id = value + '@' + option.fid;
+          console.log(dataProp.llm_id);
+        }" />
       </a-form-item>
       <a-form-item :label="t('chat.temperature')" :tooltip="t('chat.temperatureTip')">
         <a-slider v-model:value="dataProp.temperature" :max="1" :min="0" :step="0.1" />
