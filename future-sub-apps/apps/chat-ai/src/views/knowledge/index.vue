@@ -205,10 +205,10 @@ onMounted(() => {
       <ScrollArea class="flex h-full">
         <ASpin :spinning="modelRt.spinning" size="large">
           <div class="pl-15 pr-15 pb-18 flex items-start justify-between p-0" style="padding: 0 60px 72px">
-            <div>
+            <!-- div>
               <span class="text-3xl font-semibold leading-9 text-gray-900">{{t('knowledgeList.welcome')}}, {{ modelUserInfo.userName }}</span>
               <p class="text-base font-normal leading-6 text-gray-600">{{t('knowledgeList.description')}}</p>
-            </div>
+            </--div -->
             <a-space>
               <a-input v-model:value="modelRt.searchParam" :placeholder="t('knowledgeList.searchKnowledgePlaceholder')">
                 <template #prefix>
@@ -227,7 +227,8 @@ onMounted(() => {
             <div class="grid grid-cols-1 gap-5 sm:grid-cols-3 2xl:grid-cols-5">
               <div v-for="(item, index) in modelRef.knowledgeList || []" :key="index">
                 <a-card class="m-0 cursor-pointer rounded-lg border border-gray-200 p-0 shadow-sm">
-                  <div class="flex h-64 flex-col justify-between" @click="toPage('Dataset', { id: item.id }, { id: item.id })">
+                  <!-- div class="flex h-64 flex-col justify-between" @click="toPage('Dataset', { id: item.id }, { id: item.id })" -->
+                  <div class="flex h-40 flex-col justify-between" @click="toPage('Dataset', { id: item.id }, { id: item.id })">
                     <div class="flex justify-between">
                       <a-avatar class="flex h-8 w-8 items-center justify-center text-base">
                         <template #icon><UserOutlined /></template>
