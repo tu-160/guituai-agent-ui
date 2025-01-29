@@ -13,6 +13,10 @@ const routes: RouteRecordRaw[] = [
     name: 'admin',
     path: '/admin',
     children: [
+      { // 设置默认子路由重定向到 /admin/mybot
+        path: '', // 默认子路由
+        redirect: '/admin/mybot'
+      },
       {
         name: 'Mybot',
         path: '/admin/mybot',
