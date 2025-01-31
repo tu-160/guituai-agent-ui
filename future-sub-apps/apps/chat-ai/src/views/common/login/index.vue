@@ -9,6 +9,9 @@ import { C0006 } from '@/api/modules/a2';
 import { useUserStore } from '@/store/modules/useUserStore';
 import { encryptPassword } from '@/utils/EncryptionUtils';
 import { Form, message } from 'ant-design-vue';
+import { i18n } from "@/locales/i18n";
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 
 const useForm = Form.useForm;
 const labelCol = { span: 24 };
@@ -37,13 +40,13 @@ const { validate, validateInfos } = useForm(
     account: [
       {
         required: true,
-        message: '必录项',
+        message: t('common.required'),
       },
     ],
     password: [
       {
         required: true,
-        message: '必录项',
+        message: t('common.required'),
       },
     ],
   }),
@@ -75,21 +78,21 @@ const modelRt = reactive({
 const validatePass2 = async (_rule: Rule, value: string) => {
   if (value === '') {
     // eslint-disable-next-line prefer-promise-reject-errors, unicorn/no-useless-promise-resolve-reject
-    return Promise.reject('请重新输入密码!');
+    return Promise.reject(t('login.passwordPlaceholder'));
   } else if (value === modelRt.password) {
     // eslint-disable-next-line unicorn/no-useless-promise-resolve-reject
     return Promise.resolve();
   } else {
     // eslint-disable-next-line prefer-promise-reject-errors, unicorn/no-useless-promise-resolve-reject
-    return Promise.reject('两次密码不一致!');
+    return Promise.reject(t('login.passwordNotMatch'));
   }
 };
 
 const rules: Record<string, Rule[]> = {
-  nickname: [{ required: true, message: '请录入用户名', trigger: ['blur', 'change'] }],
-  password: [{ required: true, message: '请录入密码', trigger: ['blur', 'change'] }],
+  nickname: [{ required: true, message: t('login.nicknamePlaceholder'), trigger: ['blur', 'change'] }],
+  password: [{ required: true, message: t('login.passwordPlaceholder'), trigger: ['blur', 'change'] }],
   password2: [{ validator: validatePass2, trigger: 'change' }],
-  email: [{ required: true, type: 'email', message: '邮箱格式错误', trigger: ['blur', 'change'] }],
+  email: [{ required: true, type: 'email', message: t('login.emailFormatError'), trigger: ['blur', 'change'] }],
 };
 
 const onSign = () => {
@@ -102,7 +105,7 @@ const onSign = () => {
     };
     await C0006(params)
       .then(() => {
-        message.success('注册成功！');
+        message.success(t('message.registered'));
         signFormRef.value.resetFields();
         modelRt.signLogin = false;
         modelRt.show = !modelRt.show;
@@ -152,8 +155,8 @@ const signOrLogin = () => {
 
                 <!-- 二维码下面的两行文字 -->
                 <div class="mt-4 text-center">
-                  <p class="text-lg font-semibold">欢迎使用微信登录</p>
-                  <p class="text-sm text-gray-600">请使用手机微信扫码登录</p>
+                  <p class="text-lg font-semibold">{{t('login.wechatLogin')}}</p>
+                  <p class="text-sm text-gray-600">{{t('login.wechatQR')}}</p>
                 </div>
               </div>
             </div>
@@ -163,19 +166,19 @@ const signOrLogin = () => {
 
             <!-- 表单部分 -->
             <div class="w-full md:w-1/2">
-              <h2 class="text-center text-xl font-semibold text-gray-900 md:text-left">欢迎登录</h2>
+              <h2 class="text-center text-xl font-semibold text-gray-900 md:text-left">{{t('login.welcome')}}</h2>
               <a-form :label-col="labelCol" :wrapper-col="wrapperCol">
-                <a-form-item label="账号" v-bind="validateInfos.nickname">
-                  <a-input v-model:value="modelRef.nickname" placeholder="请录入" />
+                <a-form-item :label="t('login.nicknameLabel')" v-bind="validateInfos.nickname">
+                  <a-input v-model:value="modelRef.nickname" :placeholder="t('login.nicknamePlaceholder')" />
                 </a-form-item>
-                <a-form-item label="密码" v-bind="validateInfos.password">
-                  <a-input-password v-model:value="modelRef.password" placeholder="请录入" />
+                <a-form-item :label="t('login.passwordLabel')" v-bind="validateInfos.password">
+                  <a-input-password v-model:value="modelRef.password" :placeholder="t('login.passwordPlaceholder')" />
                 </a-form-item>
                 <div class="flex justify-center md:justify-start">
-                  <a-button :loading="userStore.loginLoading" class="w-full" type="primary" @click="onSubmit">登录</a-button>
+                  <a-button :loading="userStore.loginLoading" class="w-full" type="primary" @click="onSubmit">{{ t('login.login') }}</a-button>
                 </div>
                 <div class="mt-4 text-right">
-                  <p class="text-sm text-gray-500">还没有账号？<a class="font-medium text-blue-600 hover:underline" @click="signOrLogin">立即注册</a></p>
+                  <p class="text-sm text-gray-500">{{ t('login.signInTip') }}<a class="font-medium text-blue-600 hover:underline" @click="signOrLogin">{{ t('login.signUp') }}</a></p>
                 </div>
               </a-form>
             </div>
@@ -188,8 +191,8 @@ const signOrLogin = () => {
             <div class="flex w-full items-center justify-center md:w-1/2">
               <div class="mx-auto w-full max-w-sm rounded-full p-4">
                 <div class="mt-4 text-center">
-                  <p class="text-lg font-semibold">已有账号？</p>
-                  <a-button class="w-full" ghost type="primary" @click="signOrLogin">返回登录</a-button>
+                  <p class="text-lg font-semibold">{{ t('login.signUpTip') }}</p>
+                  <a-button class="w-full" ghost type="primary" @click="signOrLogin">{{ t('login.login') }}</a-button>
                 </div>
               </div>
             </div>
@@ -199,19 +202,19 @@ const signOrLogin = () => {
 
             <!-- 表单部分 -->
             <div class="w-full md:w-1/2">
-              <h2 class="text-center text-xl font-semibold text-gray-900 md:text-left">欢迎注册</h2>
+              <h2 class="text-center text-xl font-semibold text-gray-900 md:text-left">{{ t('login.signUp') }}</h2>
               <a-form ref="signFormRef" :label-col="signLabelCol" :model="modelRt" :rules="rules" :wrapper-col="signWrapperCol">
-                <a-form-item label="用户名" name="nickname">
-                  <a-input v-model:value="modelRt.nickname" placeholder="请录入" />
+                <a-form-item :label="t('login.nicknameLabel')" name="nickname">
+                  <a-input v-model:value="modelRt.nickname" :placeholder="t('login.nicknamePlaceholder')" />
                 </a-form-item>
-                <a-form-item has-feedback label="密码" name="password">
+                <a-form-item has-feedback :label="t('login.passwordLabel')" name="password">
                   <a-input v-model:value="modelRt.password" autocomplete="off" type="password" />
                 </a-form-item>
-                <a-form-item has-feedback label="确认密码" name="password2">
+                <a-form-item has-feedback :label="t('login.confirmPasswordLabel')" name="password2">
                   <a-input v-model:value="modelRt.password2" autocomplete="off" type="password" />
                 </a-form-item>
-                <a-form-item label="邮箱" name="email">
-                  <a-input v-model:value="modelRt.email" placeholder="请录入" />
+                <a-form-item :label="t('login.emailLabel')" name="email">
+                  <a-input v-model:value="modelRt.email" :placeholder="t('login.emailPlaceholder')" />
                 </a-form-item>
                 <div class="flex justify-center md:justify-start">
                   <!-- <button
@@ -221,7 +224,7 @@ const signOrLogin = () => {
                   >
                     注册
                   </button> -->
-                  <a-button :loading="modelRt.signLogin" class="w-full" type="primary" @click="onSign">注册</a-button>
+                  <a-button :loading="modelRt.signLogin" class="w-full" type="primary" @click="onSign">{{ t('login.signUp') }}</a-button>
                 </div>
               </a-form>
             </div>
