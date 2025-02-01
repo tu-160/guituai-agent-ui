@@ -1,4 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router';
+import { i18n } from "@/locales/i18n";
+const t = i18n.global.t;
 
 import AdminBasicLayout from '@/layout/admin-layout/index.vue';
 
@@ -8,7 +10,7 @@ const routes: RouteRecordRaw[] = [
     meta: {
       icon: 'lucide:layout-dashboard',
       order: -1,
-      title: '知识库',
+      title: t('header.knowledgeBase'),
     },
     name: 'knowledge',
     path: '/',
@@ -20,7 +22,7 @@ const routes: RouteRecordRaw[] = [
         meta: {
           affixTab: true,
           icon: 'lucide:area-chart',
-          title: '知识库',
+          title: t('header.knowledgeBase'),
         },
       },
       {
@@ -29,7 +31,7 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/views/knowledge/dataset/index.vue'),
         meta: {
           icon: 'carbon:workspace',
-          title: '数据集',
+          title: t('knowledgeDetails.dataset'),
         },
       },
       {
@@ -38,7 +40,7 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/views/knowledge/testing/index.vue'),
         meta: {
           icon: 'carbon:workspace',
-          title: '检索测试',
+          title: t('knowledgeDetails.testing'),
         },
       },
       {
@@ -47,7 +49,7 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/views/knowledge/configuration/index.vue'),
         meta: {
           icon: 'carbon:workspace',
-          title: '配置',
+          title: t('knowledgeDetails.configuration'),
         },
       },
     ],

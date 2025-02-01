@@ -96,12 +96,12 @@ const { toPage } = usePage(router);
       <nav class="hidden h-14 flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
         <a class="flex h-14 w-max items-center gap-2 text-2xl font-semibold md:text-base" href="/admin/mybot">
           <Package2 class="h-6 w-6" />
-          <span class="sr-only">智能体创作中心</span>
-          <span>智能体创作中心</span>
+          <span class="sr-only">{{ t('chat_index.agentCenter') }} </span>
+          <span>{{ t('chat_index.agentCenter') }}</span>
         </a>
-        <a :class="getActiveClass('/admin/mybot')" href="javaScript:void(0)" @click="toPage('Mybot')"> 常规智能体 </a>
-        <a :class="getActiveClass('/admin/flow')" href="javaScript:void(0)" @click="toPage('Flow')"> 高阶智能体 </a>
-        <a :class="getActiveClass('/knowledge')" href="javaScript:void(0)" @click="toPage('Knowledge')"> 知识库 </a>
+        <a :class="getActiveClass('/admin/mybot')" href="javaScript:void(0)" @click="toPage('Mybot')"> {{ t('chat_index.conventionalAgentCenter') }} </a>
+        <a :class="getActiveClass('/admin/flow')" href="javaScript:void(0)" @click="toPage('Flow')"> {{ t('chat_index.advancedAgentCenter') }} </a>
+        <a :class="getActiveClass('/knowledge')" href="javaScript:void(0)" @click="toPage('Knowledge')"> {{ t('header.knowledgeBase') }} </a>
         <!-- <a class="text-foreground hover:text-foreground w-max border-b-2 border-solid border-current leading-[56px] transition-colors" href="/admin/mybot">
           通用智能体
         </a>
@@ -120,13 +120,13 @@ const { toPage } = usePage(router);
           <nav class="grid gap-6 text-lg font-medium">
             <a class="flex items-center gap-2 text-lg font-semibold" href="/admin/mybot">
               <Package2 class="h-6 w-6" />
-              <span class="sr-only">智能体创作中心</span>
+              <span class="sr-only">{{ t('chat_index.agentCenter') }}</span>
             </a>
-            <a :class="getLeftActiveClass('/admin/mybot')" href="/admin/mybot"> 通用智能体 </a>
-            <a :class="getLeftActiveClass('#')" href="#"> 高阶智能体 </a>
-            <a :class="getLeftActiveClass('/knowledge')" href="/knowledge"> 知识库 </a>
+            <a :class="getLeftActiveClass('/admin/mybot')" href="/admin/mybot"> {{ t('chat_index.conventionalAgentCenter') }} </a>
+            <a :class="getLeftActiveClass('#')" href="#"> {{t('chat_index.advancedAgentCenter')}} </a>
+            <a :class="getLeftActiveClass('/knowledge')" href="/knowledge"> {{t('header.knowledgeBase')}} </a>
             <a :class="getLeftActiveClass('#')" href="#"> Customers </a>
-            <a :class="getLeftActiveClass('#')" href="#"> 文件管理 </a>
+            <a :class="getLeftActiveClass('#')" href="#"> {{t('header.fileManager')}} </a>
             <!-- <a class="hover:text-foreground" href="#"> 通用智能体 </a>
             <a class="text-muted-foreground hover:text-foreground" href="#"> 高阶智能体 </a>
             <a class="text-muted-foreground hover:text-foreground" href="/knowledge"> 知识库 </a>
@@ -145,12 +145,12 @@ const { toPage } = usePage(router);
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuLabel>{{ modelRt.userName || '未登录' }}</DropdownMenuLabel>
+            <DropdownMenuLabel>{{ modelRt.userName || t('login.noLogin') }}</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <!-- <DropdownMenuItem>设置</DropdownMenuItem>
             <DropdownMenuItem>支持</DropdownMenuItem>
             <DropdownMenuSeparator /> -->
-            <DropdownMenuItem @click="loginOut()">{{ modelRt.userName ? '退出' : '登录' }}</DropdownMenuItem>
+            <DropdownMenuItem @click="loginOut()">{{ modelRt.userName ? t('setting.quit') : t('login.login') }}</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

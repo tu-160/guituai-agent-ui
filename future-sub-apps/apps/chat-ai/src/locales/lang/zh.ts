@@ -23,6 +23,10 @@ export default {
     more: '发现更多',
     recently: '最近使用',
     deleteAgentMessageTip: '确认是否删除：{name}，删除后对话记录也会一并删除，请谨慎操作。',
+    agentCenter: '智能体创作中心',
+    conventionalAgentCenter: '常规智能体',
+    advancedAgentCenter: '高阶智能体',
+    historical: '历史记录',
   },
   common: {
     tip_title: '提示',

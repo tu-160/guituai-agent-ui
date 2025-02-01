@@ -37,7 +37,7 @@ const getPublicList = async () => {
     modelRef.publicList = res.data.private_data;
     modelRt.spinning = false;
   } catch (error) {
-    console.error('查询失败', error);
+    // console.error('查询失败', error);
     modelRt.spinning = false;
   }
 };

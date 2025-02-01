@@ -1,4 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router';
+import { i18n } from "@/locales/i18n";
+const t = i18n.global.t;
 
 const routes: RouteRecordRaw[] = [
   {

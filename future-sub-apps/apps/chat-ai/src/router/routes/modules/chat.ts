@@ -21,7 +21,7 @@ const routes: RouteRecordRaw[] = [
         meta: {
           affixTab: true,
           icon: 'lucide:area-chart',
-          title: '聊天',
+          title: i18n.global.t('header.chat'),
         },
       },
       {
@@ -30,7 +30,7 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/views/chat/square/index.vue'),
         meta: {
           icon: 'carbon:workspace',
-          title: '智能体广场',
+          title: i18n.global.t('chat_index.agentPlaza'),
         },
       },
       {
@@ -39,7 +39,7 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/views/test1/test.vue'),
         meta: {
           icon: 'carbon:workspace',
-          title: 'TEST',
+          title: i18n.global.t('knowledgeDetails.testingLabel'),
         },
       },
     ],

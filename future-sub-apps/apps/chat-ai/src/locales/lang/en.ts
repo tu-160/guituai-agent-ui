@@ -22,6 +22,10 @@ export default {
     more: 'Discover more',
     recently: 'Recently Used',
     deleteAgentMessageTip: 'Confirm whether to delete {name}. After deletion, the conversation records will also be deleted. Operate with caution.',
+    agentCenter: 'Intelligent Agent Center',
+    conventionalAgentCenter: 'Conventional intelligent agent',
+    advancedAgentCenter: 'Advanced intelligent agent',
+    historical: 'Historical',
   },
   common: {
     tip_title: 'tip',

@@ -1,6 +1,8 @@
 <!-- 会话历史 -->
 <script setup lang="ts">
 import { ref } from 'vue';
+import { i18n } from "@/locales/i18n";
+const t = i18n.global.t;
 
 import { Skeleton } from '@future-core/shadcn-ui';
 
@@ -38,7 +40,7 @@ const { state } = useBaseLogic();
     <header
       class="flex h-[--chat-nav-height] w-full shrink-0 items-center gap-2 border-b border-solid transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12"
     >
-      <div class="flex w-full items-center gap-2 px-4"><span class="mr-auto">历史记录</span> <X @click="emit('close', 1)" /></div>
+      <div class="flex w-full items-center gap-2 px-4"><span class="mr-auto">{{t('chat_index.historical')}}</span> <X @click="emit('close', 1)" /></div>
     </header>
 
     <div class="flex flex-1 flex-col gap-4">
