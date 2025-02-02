@@ -9,6 +9,7 @@ export default {
     recentlyUsed: '最近使用过',
     remvoeConver: '移除对话',
     agentPlaza: '智能体广场',
+    manageAgent: '管理智能体',
     createAgent: '创建智能体',
     userInfoSwitch: '用户信息开关',
     createAgentDesc1: '如果需要获得更加专业或定制的智能体，可以点击',

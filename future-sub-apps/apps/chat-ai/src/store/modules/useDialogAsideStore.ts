@@ -78,7 +78,7 @@ export const useDialogAsideStore = defineStore({
       const params = {
         searchSize: 5,
       };
-      debugger
+
       const invokeApis = [C0012(params)];
       if (userStore.token) {
         invokeApis.push(C0009());
@@ -87,7 +87,9 @@ export const useDialogAsideStore = defineStore({
       const [res0010, res0009] = await Promise.all(invokeApis).finally(() => {
         this.loadingStatus.dialogLoading = false;
       });
-      this.normalDialogList = res0010.data;
+
+      this.normalDialogList = [...res0010.data, ...res0009.data];
+
       // 添加url参数
       for (const item of this.normalDialogList) { // 初始化公共智能体
         if(item !=null) {

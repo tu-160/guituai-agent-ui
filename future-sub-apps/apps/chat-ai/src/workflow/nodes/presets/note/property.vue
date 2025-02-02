@@ -47,7 +47,7 @@ const Config = {
 
 function useBaseLogic(_props: any, _useFlow: any, _currentNodeModel?: Ref<Model.BaseModel>, _lfInstance?: Ref<LogicFlow>) {
   const modelRt = reactive({});
-  debugger
+
   console.log(_currentNodeModel);
   // 已经设置过数据，使用grap中的数据进行赋值用于显示。
   dataProp.value.params.note_text = _currentNodeModel.value.properties.data.form.note_text;

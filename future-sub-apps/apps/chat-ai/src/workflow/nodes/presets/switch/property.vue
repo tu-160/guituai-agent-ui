@@ -115,7 +115,7 @@ function useBaseLogic(_props: any, _handleFlowUtils: any, _currentNodeInfo?: Ref
   };
 
   const updateEdge = (oldTargetNodeId: string, newTargetNodeId: string) => {
-    debugger
+
     const nodeID = _currentNodeInfo?.value.id;
     if (!nodeID) return;
 
@@ -131,7 +131,7 @@ function useBaseLogic(_props: any, _handleFlowUtils: any, _currentNodeInfo?: Ref
   }
 
   const addEdge = (targetNodeId: string, tag: string) => {
-    debugger
+
     const nodeID = _currentNodeInfo?.value.id;
     if (!nodeID) return;
     // const startPoint = (_lfInstance?.value.getModelById(nodeID || '') as any).getDefaultAnchor().find((item: any) => item.tag === tag);

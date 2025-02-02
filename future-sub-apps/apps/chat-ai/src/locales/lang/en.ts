@@ -8,6 +8,7 @@ export default {
     recentlyUsed: 'Recently Used',
     remvoeConver: 'Remove conversation',
     agentPlaza: 'Intelligent Agent Plaza',
+    manageAgent: 'Manage intelligent agents',
     createAgent: 'Create Intelligent Agent',
     userInfoSwitch: 'User Information Switch',
     createAgentDesc1: 'If you need to obtain a more professional or customized agent, you can click',

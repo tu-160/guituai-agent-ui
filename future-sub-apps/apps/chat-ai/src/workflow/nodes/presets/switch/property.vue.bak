@@ -135,7 +135,7 @@ function useBaseLogic(_props: any, _handleFlowUtils: any, _currentNodeInfo?: Ref
     watch(
       () => modelRt.params,
       () => {
-        debugger
+
         if (!_currentNodeInfo?.value.id) return;
         _lfInstance?.value.setProperties(_currentNodeInfo?.value.id, {
           // height: (currentNodeModel.value.properties?.rawHeight || 0) + dataProp.value.params.parameters.length * 38,

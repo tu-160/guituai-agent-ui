@@ -105,7 +105,7 @@ const fetchSendMsg = async (message?: string) => {
   const messages = modelChat.conversationList?.slice(); // 浅拷贝
   modelChat.conversationList?.push(answerInfo);
   modelChat.loadingStatus!.send = true;
-  debugger
+
   // 然后创建会话
   if (!modelChat.session_id) {
     const res = await C0002({dialog_id: modelChat.dialog_id || ''}).catch((error: any) => {

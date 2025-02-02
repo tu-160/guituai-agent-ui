@@ -100,12 +100,14 @@ const { toDialogPage, openPage } = useToPage();
     <div class="square-container">
       <div class="square-title mt-4">{{ t('chat_index.myagent') }}</div>
       <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3 2xl:grid-cols-4">
+        <!--
         <div class="square-card group !border-2 border-dashed hover:border-blue-500" @click="openPage('Createbot')">
           <Avatar class="h-14 w-14 text-xs">
             <Plus :size="36" class="group-hover:text-blue-500" />
           </Avatar>
           <span class="pl-2 group-hover:text-blue-500">{{ t('chat_index.createAgent') }}</span>
         </div>
+        -->
 
         <div v-for="item in state.privateList" :key="item.id" class="square-card group" @click="toDialogPage(item)">
           <Avatar class="h-14 w-14 text-xs">
@@ -113,7 +115,7 @@ const { toDialogPage, openPage } = useToPage();
             <a-avatar :size="48" :src="item.icon" />
           </Avatar>
           <span class="pl-2">{{ item.name }}</span>
-
+          <!--
           <div class="absolute right-2 top-1/2 -mt-4 flex h-8 w-14 items-center gap-2">
             <Icon
               class="hidden size-8 rounded-sm p-1 hover:bg-slate-100 group-hover:block"
@@ -122,6 +124,7 @@ const { toDialogPage, openPage } = useToPage();
             />
             <Icon class="hidden size-8 rounded-sm p-1 hover:bg-slate-100 group-hover:block" icon="lucide:trash-2" @click.stop="delDialog(item)" />
           </div>
+          -->
         </div>
       </div>
       <div class="square-title mt-4">{{ t('chat_index.more') }}</div>

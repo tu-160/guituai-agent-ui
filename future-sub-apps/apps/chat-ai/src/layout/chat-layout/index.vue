@@ -98,6 +98,7 @@ function useBaseLogic(dialogAsideStore: any, userStore: any) {
     await dialogAsideStore.getDialogList();
     state.value.normalDialog = dialogAsideStore.normalDialogList;
     state.value.recentDialog = dialogAsideStore.recentDialogList;
+
     // 默认第一个为激活状态
     if (state.value.normalDialog.length > 0 && state.value.normalDialog[0]) {
       dialogAsideStore.setCurrentDialog(state.value.normalDialog[0]);
@@ -147,6 +148,7 @@ function useToPage() {
     }
     await state.value.dialogLoadingP;
     const activeDialog = state.value.normalDialog[0];
+    debugger
     toPage(activeDialog.url, { id: activeDialog.id });
   };
 
@@ -179,7 +181,7 @@ initPage(baseState);
                     <span class="truncate font-semibold">{{ baseState.team.name }}</span>
                     <span class="truncate text-xs">{{ baseState.team.plan }}</span>
                   </div>
-                  <History class="ml-auto" @click="dialogAsideStore.triggerHistoryBtn()" />
+                  <!-- History class="ml-auto" @click="dialogAsideStore.triggerHistoryBtn()" / -->
                 </SidebarMenuButton>
               </DropdownMenuTrigger>
             </DropdownMenu>
@@ -296,9 +298,9 @@ initPage(baseState);
             <span class="truncate font-semibold"> {{i18n.global.t('chat_index.agentPlaza')}} </span>
           </Button>
           <div class="line h-full w-[1px] border-l border-solid"></div>
-          <Button variant="outline" @click="openPage('Createbot')">
+          <Button variant="outline" @click="openPage('admin')">
             <Grid2x2Plus class="mr-2 h-4 w-4" color="hsl(var(--primary))" />
-            <span class="truncate font-semibold"> {{i18n.global.t('chat_index.createAgent')}} </span>
+            <span class="truncate font-semibold"> {{i18n.global.t('chat_index.manageAgent')}} </span>
           </Button>
         </div>
 
