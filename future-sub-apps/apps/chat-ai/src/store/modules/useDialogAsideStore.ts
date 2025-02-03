@@ -1,4 +1,4 @@
-import { C0003, C0004, C0005, C0009, C0011, C0012 } from '@/api';
+import {C0003, C0004, C0005, C0009, C0011, C0012, C0014, C0015} from '@/api';
 import { defineStore } from 'pinia';
 
 import { useUserStore } from './useUserStore';
@@ -17,6 +17,18 @@ export interface IDialog {
   default_question?: string[];
 }
 
+export interface IConversation {
+  // 是否处于活动状态
+  id: string;
+  create_date: Date;
+  dialog_id: string;
+  url?: string;
+  user_id: string;
+  message: [];
+  tokens: number;
+  source: string;
+}
+
 export interface ISession {
   // 是否处于活动状态
   id: string;
@@ -32,6 +44,7 @@ export interface IDialogAside {
   normalDialogList: IDialog[];
   // 最近使用智能体列表
   recentDialogList: IDialog[];
+  recentConversationList: IConversation[];
   // 按钮状态
   toggleBtnStatus: {
     // 会话历史开关按钮状态
@@ -57,6 +70,7 @@ export const useDialogAsideStore = defineStore({
     currentDialog: undefined,
     normalDialogList: [],
     recentDialogList: [],
+    recentConversationList: [],
     toggleBtnStatus: {
       history: false,
     },
@@ -97,16 +111,27 @@ export const useDialogAsideStore = defineStore({
           item.params = { id: item.id };
         }
       }
-      if (res0009) { // 初始化私有智能体
-        this.recentDialogList = res0009.data;
-        // 添加url参数
-        for (const item of this.recentDialogList) {
+      // if (res0009) { // 初始化私有智能体
+      //   this.recentDialogList = res0009.data;
+      //   // 添加url参数
+      //   for (const item of this.recentDialogList) {
+      //     if(item !=null) {
+      //       item.url = `Chat`;
+      //       item.params = { id: item.id };
+      //     }
+      //
+      //   }
+      // }
+      const recentlist = await C0014({});
+      if(recentlist.code==200) {
+        this.recentConversationList = recentlist.data.data;
+        for (const item of this.recentConversationList) {
           if(item !=null) {
             item.url = `Chat`;
-            item.params = { id: item.id };
           }
-
         }
+      } else {
+        this.recentConversationList = [];
       }
     },
     // 触发会话历史开关按钮状态
@@ -159,6 +184,7 @@ export const useDialogAsideStore = defineStore({
       // 调用接口进行移除
       if (isInvokeRemoveApi) {
         C0011({ id: dialog.id });
+        C0015({ids: [dialog.id]});
       }
     },
     // 获取历史会话信息

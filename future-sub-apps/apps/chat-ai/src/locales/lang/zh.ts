@@ -6,7 +6,7 @@ export default {
   },
   chat_index: {
     myagent: '我的智能体',
-    recentlyUsed: '最近使用过',
+    recentlyUsed: '最近通话',
     remvoeConver: '移除对话',
     agentPlaza: '智能体广场',
     manageAgent: '管理智能体',

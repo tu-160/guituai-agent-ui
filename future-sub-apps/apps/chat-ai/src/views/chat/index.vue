@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed, nextTick, reactive, ref, watch } from 'vue';
-import { type LocationQueryRaw, type RouteParamsGeneric, useRouter } from 'vue-router';
+import { type LocationQueryRaw, type RouteParamsGeneric, useRouter, useRoute } from 'vue-router';
 
-import { C0001, C0002 } from '@/api';
+import {C0001, C0002, C0014} from '@/api';
 import ChatGuide from '@/components/chat-guide/index.vue';
 import ChatItem from '@/components/chat-item/index.vue';
 import FChatInputArea from '@/components/f-chat-Input-area/index.vue';
-import { type IDialog, useDialogAsideStore } from '@/store/modules/useDialogAsideStore';
+import {type IDialog, type IConversation, useDialogAsideStore} from '@/store/modules/useDialogAsideStore';
 
 interface message {
   content: string;
@@ -138,20 +138,43 @@ function useBaseLogic() {
       });
   };
 
-  const init = () => {
+  const init = async () => {
+    const route = useRoute();
+    let conversation_id = route.params?.id;
+    let dialog_id = route.params?.dialog_id;
+    let user_id = route.params?.user_id;
+    let message = route.params?.message;
+    if (conversation_id != undefined && conversation_id != "") {
+      let conversat = await C0014({conversation_id: conversation_id});
+      if(conversat.code===200 && conversat.data.data.length > 0) {
+        console.log('123132');
+        let mess = conversat.data.data[0].message;
+        dialogAsideStore.conversationList = mess;
+
+        dialogAsideStore.currentDialog.id = conversat.data.data[0].dialog_id;
+        dialogAsideStore.currentSession = {
+          // 是否处于活动状态
+          id: conversat.data.data[0].id,
+          name: conversat.data.data[0].name,
+          isActive: true,
+          create_date: conversat.data.data[0].create_date,
+        };
+      }
+
+    }
     // 聊天始终滚动到最底部
     watch(
-      () => [state.value.currentAnswer, state.value.conversationList],
-      () => {
-        nextTick(() => {
-          if (conversationDomRef.value) {
-            conversationDomRef.value[conversationDomRef.value.length - 1]?.scrollIntoView();
-          }
-        });
-      },
-      {
-        deep: true,
-      },
+        () => [state.value.currentAnswer, state.value.conversationList],
+        () => {
+          nextTick(() => {
+            if (conversationDomRef.value) {
+              conversationDomRef.value[conversationDomRef.value.length - 1]?.scrollIntoView();
+            }
+          });
+        },
+        {
+          deep: true,
+        },
     );
   };
 

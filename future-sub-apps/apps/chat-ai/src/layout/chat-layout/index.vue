@@ -34,7 +34,7 @@ import {
 } from '@future-core/shadcn-ui';
 
 import LayoutContent from '@/layout/content/index.vue';
-import { type IDialog, useDialogAsideStore } from '@/store/modules/useDialogAsideStore';
+import { type IDialog, type IConversation, useDialogAsideStore } from '@/store/modules/useDialogAsideStore';
 import { useUserStore } from '@/store/modules/useUserStore';
 import { Modal } from 'ant-design-vue';
 import { AudioWaveform, ChevronRight, ChevronsLeft, ChevronsRight, Grid2x2, Grid2x2Plus, History, MoreHorizontal, Trash2, User } from 'lucide-vue-next';
@@ -69,6 +69,7 @@ function useBaseLogic(dialogAsideStore: any, userStore: any) {
     }),
     normalDialog: [] as IDialog[],
     recentDialog: [] as IDialog[],
+    recentConversationList: [] as IConversation[],
   });
   // 开放函数
   const logout = () => {
@@ -98,6 +99,7 @@ function useBaseLogic(dialogAsideStore: any, userStore: any) {
     await dialogAsideStore.getDialogList();
     state.value.normalDialog = dialogAsideStore.normalDialogList;
     state.value.recentDialog = dialogAsideStore.recentDialogList;
+    state.value.recentConversationList = dialogAsideStore.recentConversationList;
 
     // 默认第一个为激活状态
     if (state.value.normalDialog.length > 0 && state.value.normalDialog[0]) {
@@ -140,6 +142,12 @@ function useToPage() {
     toPage(dialog.url, { id: dialog.id });
   };
 
+  const toSessionDialogPage = (dialog: IConversation) => {
+    dialogAsideStore.setCurrentDialog(dialog);
+
+    toPage(dialog.url, {id: dialog.id, dialog_id: dialog.dialog_id, user_id: dialog.user_id, message: dialog.message});
+  };
+
   // 首次加载打开内容页
   const initPage = async (state: Ref<any>) => {
     // 如果没有激活的对话，则打开第一个对话
@@ -148,19 +156,19 @@ function useToPage() {
     }
     await state.value.dialogLoadingP;
     const activeDialog = state.value.normalDialog[0];
-    debugger
     toPage(activeDialog.url, { id: activeDialog.id });
   };
 
   return {
     toPage,
     toDialogPage,
+    toSessionDialogPage,
     openPage,
     initPage,
   };
 }
 
-const { toPage, toDialogPage, openPage, initPage } = useToPage();
+const { toPage, toDialogPage, toSessionDialogPage, openPage, initPage } = useToPage();
 initPage(baseState);
 </script>
 
@@ -232,13 +240,14 @@ initPage(baseState);
             <ChevronRight class="ml-auto rotate-90 transition-transform duration-200" />
           </SidebarGroupLabel>
           <SidebarMenu>
-            <SidebarMenuItem v-for="item in baseState.recentDialog" :key="item.id">
-              <SidebarMenuButton :is-active="item.isActive" as-child size="lg" @click="toDialogPage(item)">
+            <SidebarMenuItem v-for="item in baseState.recentConversationList" :key="item.id">
+              <!-- SidebarMenuButton :is-active="item.isActive" as-child size="lg" @click="toDialogPage(item)" -->
+              <SidebarMenuButton as-child size="lg" @click="toSessionDialogPage(item)">
                 <a href="javascript:void(0);">
-                  <div class="flex aspect-square size-8 items-center justify-center rounded-lg">
-                    <!-- <Icon :icon="item.icon || 'carbon:logo-ibm'" class="size-4" /> -->
+<!--                  <div class="flex aspect-square size-8 items-center justify-center rounded-lg">
+                    &lt;!&ndash; <Icon :icon="item.icon || 'carbon:logo-ibm'" class="size-4" /> &ndash;&gt;
                     <a-avatar :src="item.icon" />
-                  </div>
+                  </div>-->
                   <span>{{ item.name }}</span>
                 </a>
               </SidebarMenuButton>

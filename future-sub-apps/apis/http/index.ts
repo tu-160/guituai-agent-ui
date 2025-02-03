@@ -188,7 +188,7 @@ const transform: AxiosTransform = {
     } else if (options.errorMessageMode === 'message') {
       // createMessage.error(errorMsg);
       console.log('弹窗提示错误信息2', errorMsg);
-
+      debugger
       if(errorMsg != '会话信息为空') {
         Message.error(errorMsg);
       }

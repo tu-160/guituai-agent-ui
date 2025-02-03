@@ -5,7 +5,7 @@ export default {
   },
   chat_index: {
     myagent: 'My intelligent agent',
-    recentlyUsed: 'Recently Used',
+    recentlyUsed: 'Recent conversation',
     remvoeConver: 'Remove conversation',
     agentPlaza: 'Intelligent Agent Plaza',
     manageAgent: 'Manage intelligent agents',

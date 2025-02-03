@@ -124,3 +124,17 @@ export function C0013(data: any) {
     url: `${bseApi}/api/v1/dialog/default_question?dialog_id=${data.dialog_id}`,
   });
 }
+
+export function C0014(data: any) {
+  return defHttp.post({
+    data,
+    url: `${bseApi}/api/v1/conversation/sessions?dialog_id=${data.dialog_id}&conversation_id=${data.conversation_id}`,
+  });
+}
+
+export function C0015(data: any) {
+  return defHttp.post({
+    data,
+    url: `${bseApi}/api/v1/conversation/rm/session?ids=${data.ids}`,
+  });
+}
