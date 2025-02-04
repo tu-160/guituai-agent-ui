@@ -14,6 +14,8 @@ const router = createRouter({
 // 白名单
 const whitelist = new Set(['/agreement', '/chat', '/none', '/privacypolicy']);
 router.beforeEach(async (to, from, next) => {
+  debugger
+
   const userStore = useUserStore();
   const isWhitelisted = [...whitelist].some((item) => {
     if (typeof item === 'string') {
@@ -24,16 +26,17 @@ router.beforeEach(async (to, from, next) => {
   // 检查 token 和 userInfo 是否存在
   // const token = userStore.getToken;
   // const userInfo = userStore.getUserInfo;
-  if (isWhitelisted) {
-    next();
-  } else {
+  // let infoUser = await userStore.getInfoCheck();
+  // if (isWhitelisted) {
+  //   next();
+  // } else {
     if (userStore.getToken == '') {
       userStore.openLoginModal();
       return next(false);
     }
     userStore.getInfoCheck();
     next();
-  }
+  // }
 });
 
 export default router;

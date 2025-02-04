@@ -106,7 +106,7 @@ function useBaseLogic(dialogAsideStore: any, userStore: any) {
       dialogAsideStore.setCurrentDialog(state.value.normalDialog[0]);
     }
     preState.dialogLoadingPResolve();
-  };
+  }
 
   initFunc();
   return {
