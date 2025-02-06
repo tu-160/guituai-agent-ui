@@ -5,7 +5,23 @@
 
 
 
-# 圭图AI： 基于 Java+Python语言的 LLM（大语言模型）应用开发架构。充分发挥Java在企业应用的优势和Python在LLM上的优势，两者结合，形成面向企业级的大模型低代码应用开发框架。
+# 圭图AI： 一个基于 Java、Python的 LLM（大语言模型）应用开发架构。充分发挥Java在企业应用的优势和Python在LLM上的优势，两者结合，形成面向企业级的大模型低代码应用开发框架。
+
+## 项目地址
+
+### github地址
+
+前端地址：[https://github.com/tu-160/guituai-agent-ui](https://github.com/tu-160/guituai-agent-ui)
+
+后端地址：[https://github.com/tu-160/guituai-agent](https://github.com/tu-160/guituai-agent)
+
+### gitee地址
+
+前端地址：[https://gitee.com/dabanzong/guituai-agent-ui](https://gitee.com/dabanzong/guituai-agent-ui)
+
+后端地址：[https://gitee.com/dabanzong/guituai-agent](https://gitee.com/dabanzong/guituai-agent)
+
+
 
 ---
 
@@ -43,19 +59,19 @@
 
 ### **部分系统截图**
 
-![输入图片说明](https://github.com/tu-160/guituai-agent/blob/main/docs/20250206203907.png)
+![输入图片说明](docs/20250206203907.png)
 
-![输入图片说明](https://github.com/tu-160/guituai-agent/blob/main/docs/20250206203932.png)
+![输入图片说明](docs/20250206203932.png)
 
-![输入图片说明](https://github.com/tu-160/guituai-agent/blob/main/docs/20250206204012.png)
+![输入图片说明](docs/20250206204012.png)
 
-![输入图片说明](https://github.com/tu-160/guituai-agent/blob/main/docs/20250206204044.png)
+![输入图片说明](docs/20250206204044.png)
 
-![输入图片说明](https://github.com/tu-160/guituai-agent/blob/main/docs/20250206204103.png)
+![输入图片说明](docs/20250206204103.png)
 
-![输入图片说明](https://github.com/tu-160/guituai-agent/blob/main/docs/20250206204119.png)
+![输入图片说明](docs/20250206204119.png)
 
-![输入图片说明](https://github.com/tu-160/guituai-agent/blob/main/docs/20250206204136.png)
+![输入图片说明](docs/20250206204136.png)
 
 
 
