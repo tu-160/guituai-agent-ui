@@ -22,6 +22,13 @@
 后端地址：[https://gitee.com/dabanzong/guituai-agent](https://gitee.com/dabanzong/guituai-agent)
 
 
+## 技术栈
+
+- 前端：[Vue.js](https://cn.vuejs.org/)
+- 后端：[Spring Cloud/ Python](https://github.com/spring-projects/)
+- 向量数据库：[elasticsearch](https://github.com/elastic/elasticsearch/)
+- 缓存数据库：[redis](https://github.com/redis/redis/)
+
 
 ---
 
