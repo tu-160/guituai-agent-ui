@@ -30,6 +30,12 @@
 - 缓存数据库：[redis](https://github.com/redis/redis/)
 
 
+## 联系微信
+
+![输入图片说明](./docs/20250209155532.jpg)
+
+
+
 ---
 
 ## 圭图AI是什么？
