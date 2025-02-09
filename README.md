@@ -32,7 +32,7 @@
 
 ## 联系微信
 
-<img src="./docs/20250209155532.jpg" width="300" height="200" alt="描述文字">
+<img src="./docs/20250209155532.jpg" width="300" height="300" alt="描述文字">
 
 
 
