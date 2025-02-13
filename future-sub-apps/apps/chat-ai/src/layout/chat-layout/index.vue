@@ -300,15 +300,15 @@ initPage(baseState);
       </SidebarContent>
 
       <!-- 导航 -->
-      <nav class="mt-auto grid gap-1 p-2">
-        <div v-if="state === 'expanded'" class="flex items-center gap-2">
+      <nav class="mt-auto grid gap-1 p-1">
+        <div v-if="state === 'expanded'" class="flex items-center gap-1">
           <Button variant="outline" @click="toPage('Square')">
-            <Grid2x2 class="mr-2 h-4 w-4" color="hsl(var(--primary))" />
+            <Grid2x2 class="mr-1 h-3 w-3" color="hsl(var(--primary))" />
             <span class="truncate font-semibold"> {{i18n.global.t('chat_index.agentPlaza')}} </span>
           </Button>
           <div class="line h-full w-[1px] border-l border-solid"></div>
           <Button variant="outline" @click="openPage('admin')">
-            <Grid2x2Plus class="mr-2 h-4 w-4" color="hsl(var(--primary))" />
+            <Grid2x2Plus class="mr-1 h-3 w-3" color="hsl(var(--primary))" />
             <span class="truncate font-semibold"> {{i18n.global.t('chat_index.manageAgent')}} </span>
           </Button>
         </div>
