@@ -35,7 +35,7 @@
 
 后端地址：[https://github.com/tu-160/guituai-agent](https://github.com/tu-160/guituai-agent)
 
-低代码基础服务：[https://github.com/tu-160/guituai-cloud](https://github.com/tu-160/guituai-cloud)
+业务低代码基础服务：[https://github.com/tu-160/guituai-cloud](https://github.com/tu-160/guituai-cloud)
 
 ### gitee地址
 
@@ -43,7 +43,7 @@
 
 后端地址：[https://gitee.com/dabanzong/guituai-agent](https://gitee.com/dabanzong/guituai-agent)
 
-低代码基础服务：[https://gitee.com/dabanzong/guituai-cloud](https://gitee.com/dabanzong/guituai-cloud)
+业务低代码基础服务：[https://gitee.com/dabanzong/guituai-cloud](https://gitee.com/dabanzong/guituai-cloud)
 
 
 ## 技术栈
