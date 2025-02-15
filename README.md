@@ -68,7 +68,7 @@ Our advantages include custom industry solutions, support for user-defined agent
 ---
 
 
-## 主要功能
+## Key features
 
 ### **"Quality in, quality out"**
 
