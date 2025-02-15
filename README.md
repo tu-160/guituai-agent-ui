@@ -5,62 +5,62 @@
 
 
 
-# 圭图AI： 一个基于 Java、Python的 LLM（大语言模型）应用开发架构。充分发挥Java在企业应用的优势和Python在LLM上的优势，两者结合，形成面向企业级的大模型低代码应用开发框架。
+# GuiTuAI： A Java and Python-based LLM (Large Language Model) application development architecture that leverages Java's strengths in enterprise applications and Python's strengths in LLMs. By combining these two, it forms a low-code enterprise-grade framework for developing large model applications.
 
-在当今快速发展的技术环境中，企业级应用开发正朝着更加高效、灵活和易于维护的方向发展。基于Java与Python的LLM（大语言模型）应用开发架构，旨在充分利用两种编程语言的独特优势，为企业提供一个既强大又灵活的低代码解决方案。
+In today's rapidly evolving technological environment, enterprise application development is moving towards being more efficient, flexible, and easy to maintain. The LLM (Large Language Model) application development architecture based on Java and Python aims to fully leverage the unique advantages of both programming languages to provide enterprises with a powerful yet flexible low-code solution.
 
-### 架构概述
+### Architecture Overview
 
-此架构采用Java作为构建企业级业务低代码平台的核心语言，得益于其稳定性、安全性和强大的生态系统支持。Java的这些特性使其成为处理复杂的企业逻辑、数据管理及服务端应用的理想选择。同时，利用Python在开发RAG（检索增强生成）引擎方面的灵活性和效率，尤其是对于自然语言处理任务，为用户提供更智能、直观的交互体验。通过将这两种技术巧妙结合，我们创建了一个面向未来的LLM应用开发框架，能够满足现代企业不断变化的需求。
+This architecture uses Java as the core language for building an enterprise-grade business low-code platform, leveraging its stability, security, and robust ecosystem support. These features make Java an ideal choice for handling complex enterprise logic, data management, and server-side applications. Additionally, by utilizing Python's flexibility and efficiency in developing RAG (Retrieval-Augmented Generation) engines, especially for natural language processing tasks, it provides users with a more intelligent and intuitive interaction experience. By combining these two technologies effectively, we have created an LLM application development framework that is future-ready and capable of meeting the evolving needs of modern enterprises.
 
-### 优点及优越性
+### Advantages
 
-1. **高效率与灵活性**：Java提供的稳定性和安全性确保了企业级应用的基础坚固，而Python则以其简洁的语法和丰富的机器学习库加速了开发周期，使得开发者可以更快地实现功能迭代，同时保持高质量标准。
+1. **High efficiency**：Java's stability and security ensure the solid foundation of enterprise-level applications, while Python accelerates the development cycle with its concise syntax and rich machine learning libraries, allowing developers to iterate on features more quickly while maintaining high quality standards.
 
-2. **智能化用户交互**：通过集成Python驱动的RAG引擎，该架构能够显著提升应用程序的理解能力与响应质量，实现更为自然流畅的人机对话体验，极大地增强了用户体验。
+2. **Intelligent user interaction**：Through the integration of a Python-driven RAG engine, this architecture can significantly enhance the understanding and response quality of the applications, enabling more natural and smooth human-machine dialogues, which greatly improves the user experience.
 
-3. **可扩展性强**：这种混合架构允许企业根据自身需求灵活调整资源分配和技术栈，无论是增加新的业务模块还是扩展AI功能，都能轻松应对。
+3. **Scalability**：This hybrid architecture allows enterprises to flexibly allocate resources and technology stacks based on their needs, whether it’s adding new business modules or expanding AI functionalities, it can be handled easily.
 
-4. **降低开发成本**：借助低代码平台的理念，减少了编写重复代码的工作量，提升了开发效率，降低了整体项目成本。此外，由于Java和Python都是开源且拥有庞大的社区支持，可以获得丰富的资源和插件，进一步减少开发时间。
+4. **Low cost**：By leveraging the concept of low-code platforms, it reduces the workload of writing repetitive code, improves development efficiency, and lowers the overall project cost. Additionally, since both Java and Python are open-source with large communities, it provides abundant resources and plugins, which further reduces the development time.
 
-5. **促进创新**：鼓励团队成员探索新技术的同时，也保障了现有系统的稳定运行。这种平衡促进了持续的技术创新，有助于企业在竞争中保持领先地位。
-
-
-
-## 项目地址
-
-### github地址
-
-前端地址：[https://github.com/tu-160/guituai-agent-ui](https://github.com/tu-160/guituai-agent-ui)
-
-后端地址：[https://github.com/tu-160/guituai-agent](https://github.com/tu-160/guituai-agent)
-
-业务低代码基础服务：[https://github.com/tu-160/guituai-cloud](https://github.com/tu-160/guituai-cloud)
-
-### gitee地址
-
-前端地址：[https://gitee.com/dabanzong/guituai-agent-ui](https://gitee.com/dabanzong/guituai-agent-ui)
-
-后端地址：[https://gitee.com/dabanzong/guituai-agent](https://gitee.com/dabanzong/guituai-agent)
-
-业务低代码基础服务：[https://gitee.com/dabanzong/guituai-cloud](https://gitee.com/dabanzong/guituai-cloud)
+5. **Promote innovation**：Encouraging team members to explore new technologies while ensuring the stability of the existing system promotes sustained technological innovation, which helps the company stay ahead in competitive markets. 
 
 
-## 技术栈
 
-- 前端：[Vue.js](https://cn.vuejs.org/)
-- 后端：[Spring Cloud/ Python](https://github.com/spring-projects/)
-- 向量数据库：[elasticsearch](https://github.com/elastic/elasticsearch/)
-- 缓存数据库：[redis](https://github.com/redis/redis/)
+## Code
+
+### github
+
+Frontend：[https://github.com/tu-160/guituai-agent-ui](https://github.com/tu-160/guituai-agent-ui)
+
+backend：[https://github.com/tu-160/guituai-agent](https://github.com/tu-160/guituai-agent)
+
+business low-code：[https://github.com/tu-160/guituai-cloud](https://github.com/tu-160/guituai-cloud)
+
+### gitee
+
+Frontend：[https://gitee.com/dabanzong/guituai-agent-ui](https://gitee.com/dabanzong/guituai-agent-ui)
+
+backend：[https://gitee.com/dabanzong/guituai-agent](https://gitee.com/dabanzong/guituai-agent)
+
+business low-code：[https://gitee.com/dabanzong/guituai-cloud](https://gitee.com/dabanzong/guituai-cloud)
 
 
-### 集成（鸣谢）
-- [RAGFlow](https://github.com/infiniflow/ragflow): 是一款基于深度文档理解构建的开源 RAG 引擎。
+## Technology stack
 
-## 商业合作
-针对上面技术，我们开发了一套商业级软件，支持代理 & 私有化部署！
+- Frontend：[Vue.js](https://cn.vuejs.org/)
+- backend：[Spring Cloud/ Python](https://github.com/spring-projects/)
+- Vector database：[elasticsearch](https://github.com/elastic/elasticsearch/)
+- Cache database：[redis](https://github.com/redis/redis/)
 
-我们的优势，支持定制化行业解决方案，支持用户自定义Agent，技术方案领先。
+
+### Integration (acknowledgment)
+- [RAGFlow](https://github.com/infiniflow/ragflow): RAGFlow is an open-source RAG (Retrieval-Augmented Generation) engine based on deep document understanding.
+
+## Business partnership
+Based on the technology, we developed a commercial-grade software that supports proxy and private deployment!
+
+Our advantages include custom industry solutions, support for user-defined agents, and leading technical solutions.
 
 <img src="./docs/20250209155532.jpg" width="300" height="300" alt="描述文字">
 
@@ -72,31 +72,31 @@
 
 ### **"Quality in, quality out"**
 
-- 基于[深度文档理解]，能够从各类复杂格式的非结构化数据中提取真知灼见。
-- 真正在无限上下文（token）的场景下快速完成大海捞针测试。
+- Deep document understanding-based knowledge extraction from unstructured data with complicated formats.
+- Finds "needle in a data haystack" of literally unlimited tokens.
 
-### **基于模板的文本切片**
+### **Template-based chunking**
 
-- 不仅仅是智能，更重要的是可控可解释。
-- 多种文本模板可供选择
+- Intelligent and explainable.
+- Plenty of template options to choose from.
 
-### **有理有据、最大程度降低幻觉（hallucination）**
+### **Grounded citations with reduced hallucinations**
 
-- 文本切片过程可视化，支持手动调整。
-- 有理有据：答案提供关键引用的快照并支持追根溯源。
+- Visualization of text chunking to allow human intervention.
+- Quick view of the key references and traceable citations to support grounded answers.
 
-### **兼容各类异构数据源**
+### **Compatibility with heterogeneous data sources**
 
-- 支持丰富的文件类型，包括 Word 文档、PPT、excel 表格、txt 文件、图片、PDF、影印件、复印件、结构化数据, 网页等。
+- Supports Word, slides, excel, txt, images, scanned copies, structured data, web pages, and more.
 
-### **全程无忧、自动化的 RAG 工作流**
+### **Automated and effortless RAG workflow**
 
-- 全面优化的 RAG 工作流可以支持从个人应用乃至超大型企业的各类生态系统。
-- 大语言模型 LLM 以及向量模型均支持配置。
-- 基于多路召回、融合重排序。
-- 提供易用的 API，可以轻松集成到各类企业系统。
+- Streamlined RAG orchestration catered to both personal and large businesses.
+- Configurable LLMs as well as embedding models.
+- Multiple recall paired with fused re-ranking.
+- Intuitive APIs for seamless integration with business.
 
-### **部分系统截图**
+### **Some system screenshots**
 
 ![输入图片说明](./docs/20250206203907.png)
 
@@ -114,81 +114,65 @@
 
 
 
-## 生态支持
+## Ecosystem support
 
-### 大语言模型（支持主流30+大语言模型）
+### Large language model (supports mainstream 30+ language models)
 
 
-| 大语言模型名称                       | 支持情况   | 描述    |
+| Name of the large language model                       | Support status   | Description    |
 |-------------------------------|--------|-------|
-| DeepSeek                       | ✅ 已支持  | -     |
-| MiniCPM                       | ✅ 已支持  | -     |
-| ChatGPT                       | ✅ 已支持  | -     |
-| Ollama 部署模型                   | ✅ 已支持  | -     |
-| 星火大模型                         | ✅ 已支持  | -     |
-| 通义千问                          | ✅ 已支持  | -     |
-| 智普 ChatGLM                    | ✅ 已支持  | -     |
-| 月之暗面 Moonshot                 | ✅ 已支持  | -     |
-| Qwen2-7B-Instruct   | ✅ 已支持  | -     |
-| Qwen2-72B-Instruct  | ✅ 已支持  | -     |
-| Yi-1.5-34B-Chat     | ✅ 已支持  | -     |
-| glm-4-9b-chat       | ✅ 已支持  | -     |
+| DeepSeek                       | ✅ Supported  | -     |
+| MiniCPM                       | ✅ Supported  | -     |
+| ChatGPT                       | ✅ Supported  | -     |
+| Ollama                    | ✅ Supported  | -     |
+| ChatGLM                    | ✅ Supported  | -     |
+| Moonshot                 | ✅ Supported  | -     |
+| Qwen2-7B-Instruct   | ✅ Supported  | -     |
+| Qwen2-72B-Instruct  | ✅ Supported  | -     |
+| Yi-1.5-34B-Chat     | ✅ Supported  | -     |
+| glm-4-9b-chat       | ✅ Supported  | -     |
 
 
 
-### 图片生成模型
+### Image generation model
 
 
-| 大语言模型名称                                     | 支持情况   | 描述    |
+| Name of the large language model                                      | Support status   | Description    |
 |---------------------------------------------|--------|-------|
-| Openai                                      | ✅ 已支持  | -     |
-| Stability                                   | ✅ 已支持  | -     |
-| stable-diffusion-3-medium         | ✅ 已支持  | -     |
-| FLUX.1-schnell                    | ✅ 已支持  | -     |
-| stable-diffusion-xl-base-1.0      | ✅ 已支持  | -     |
-| Kolors                            | ✅ 已支持  | -     |
-| Flux.1-schnell                | ✅ 已支持  | -     |
-| Stable Diffusion 3            | ✅ 已支持  | -     |
-| Stable Diffusion XL           | ✅ 已支持  | -     |
-| Stable Diffusion 2.1          | ✅ 已支持  | -     |
-| Stable Diffusion Turbo        | ✅ 已支持  | -     |
-| Stable Diffusion XL Turbo     | ✅ 已支持  | -     |
-| Stable Diffusion XL Lighting  | ✅ 已支持  | -     |
+| Openai                                      | ✅ Supported  | -     |
+| Stability                                   | ✅ Supported  | -     |
+| stable-diffusion-3-medium         | ✅ Supported  | -     |
+| FLUX.1-schnell                    | ✅ Supported  | -     |
+| stable-diffusion-xl-base-1.0      | ✅ Supported  | -     |
+| Kolors                            | ✅ Supported  | -     |
+| Flux.1-schnell                | ✅ Supported  | -     |
+| Stable Diffusion 3            | ✅ Supported  | -     |
+| Stable Diffusion XL           | ✅ Supported  | -     |
+| Stable Diffusion 2.1          | ✅ Supported  | -     |
+| Stable Diffusion Turbo        | ✅ Supported  | -     |
+| Stable Diffusion XL Turbo     | ✅ Supported  | -     |
+| Stable Diffusion XL Lighting  | ✅ Supported  | -     |
 
 
 
 
-### 多模态
+### Multimodal
 
-| 大语言模型名称                     | 支持情况   | 描述    |
+| Name of the large language model                     | Support status   | Description    |
 |-----------------------------|--------|-------|
-| DeepSeek                      | ✅ 已支持  | -     |
-| MimiCPM                      | ✅ 已支持  | -     |
-| 通义千问                      | ✅ 已支持  | -     |
-| Openai                      | ✅ 已支持  | -     |
-| Ollama                      | ✅ 已支持  | -     |
+| DeepSeek                      | ✅ Supported  | -     |
+| MimiCPM                      | ✅ Supported  | -     |
+| Qwen                      | ✅ Supported  | -     |
+| Openai                      | ✅ Supported  | -     |
+| Ollama                      | ✅ Supported  | -     |
 
 
-### 向量化模型
+### Vectorization model
 
-| 大语言模型名称                     | 支持情况   | 描述    |
+| Name of the large language model                     | Support status   | Description    |
 |-----------------------------|--------|-------|
-| Openai                      | ✅ 已支持  | -     |
-| 星火大模型                       | ✅ 已支持  | -     |
-| 智普 ChatGLM                  | ✅ 已支持  | -     |
-| Ollama                      | ✅ 已支持  | -     |
-| 通义千问                        | ✅ 已支持  | -     |
-| bge-small-zh-v1.5 | ✅ 已支持  | -     |
-| bge-large-zh-v1.5 | ✅ 已支持  | -     |
-| bge-m3            | ✅ 已支持  | -     |
-
-
-### 向量存储（向量数据库）
-
-| 向量数据库名称       | 支持情况   | 描述 |
-|---------------|--------|----|
-| Milvus        | ✅ 已支持  | -  |
-| OpenSearch    | ✅ 已支持  | -  |
-| ElasticSearch | ✅ 已支持  | -  |
-| Redis         | ✅ 已支持  | -  |
+| Openai                      | ✅ Supported  | -     |
+| bge-small-zh-v1.5 | ✅ Supported  | -     |
+| bge-large-zh-v1.5 | ✅ Supported  | -     |
+| bge-m3            | ✅ Supported  | -     |
 
