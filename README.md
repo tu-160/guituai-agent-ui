@@ -56,6 +56,7 @@ business low-code：[https://gitee.com/dabanzong/guituai-cloud](https://gitee.co
 
 ### Integration (acknowledgment)
 - [RAGFlow](https://github.com/infiniflow/ragflow): RAGFlow is an open-source RAG (Retrieval-Augmented Generation) engine based on deep document understanding.
+- [Xinference](https://github.com/xorbitsai/inference): Xorbits Inference(Xinference) is a powerful and versatile library designed to serve language, speech recognition, and multimodal models. With Xorbits Inference, you can effortlessly deploy and serve your or state-of-the-art built-in models using just a single command. Whether you are a researcher, developer, or data scientist, Xorbits Inference empowers you to unleash the full potential of cutting-edge AI models.
 
 ## Business partnership
 Based on the technology, we developed a commercial-grade software that supports proxy and private deployment!
