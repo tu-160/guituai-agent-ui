@@ -56,6 +56,7 @@
 
 ### 集成（鸣谢）
 - [RAGFlow](https://github.com/infiniflow/ragflow): 是一款基于深度文档理解构建的开源 RAG 引擎。
+- [Xinference](https://github.com/xorbitsai/inference): Xorbits Inference（Xinference）是一个性能强大且功能全面的分布式推理框架。可用于大语言模型（LLM），语音识别模型，多模态模型等各种模型的推理。通过 Xorbits Inference，你可以轻松地一键部署你自己的模型或内置的前沿开源模型。无论你是研究者，开发者，或是数据科学家，都可以通过 Xorbits Inference 与最前沿的 AI 模型，发掘更多可能。
 
 ## 商业合作
 针对上面技术，我们开发了一套商业级软件，支持代理 & 私有化部署！
