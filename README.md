@@ -7,6 +7,26 @@
 
 # 圭图AI： 一个基于 Java、Python的 LLM（大语言模型）应用开发架构。充分发挥Java在企业应用的优势和Python在LLM上的优势，两者结合，形成面向企业级的大模型低代码应用开发框架。
 
+在当今快速发展的技术环境中，企业级应用开发正朝着更加高效、灵活和易于维护的方向发展。基于Java与Python的LLM（大语言模型）应用开发架构，旨在充分利用两种编程语言的独特优势，为企业提供一个既强大又灵活的低代码解决方案。
+
+### 架构概述
+
+此架构采用Java作为构建企业级业务低代码平台的核心语言，得益于其稳定性、安全性和强大的生态系统支持。Java的这些特性使其成为处理复杂的企业逻辑、数据管理及服务端应用的理想选择。同时，利用Python在开发RAG（检索增强生成）引擎方面的灵活性和效率，尤其是对于自然语言处理任务，为用户提供更智能、直观的交互体验。通过将这两种技术巧妙结合，我们创建了一个面向未来的LLM应用开发框架，能够满足现代企业不断变化的需求。
+
+### 优点及优越性
+
+1. **高效率与灵活性**：Java提供的稳定性和安全性确保了企业级应用的基础坚固，而Python则以其简洁的语法和丰富的机器学习库加速了开发周期，使得开发者可以更快地实现功能迭代，同时保持高质量标准。
+
+2. **智能化用户交互**：通过集成Python驱动的RAG引擎，该架构能够显著提升应用程序的理解能力与响应质量，实现更为自然流畅的人机对话体验，极大地增强了用户体验。
+
+3. **可扩展性强**：这种混合架构允许企业根据自身需求灵活调整资源分配和技术栈，无论是增加新的业务模块还是扩展AI功能，都能轻松应对。
+
+4. **降低开发成本**：借助低代码平台的理念，减少了编写重复代码的工作量，提升了开发效率，降低了整体项目成本。此外，由于Java和Python都是开源且拥有庞大的社区支持，可以获得丰富的资源和插件，进一步减少开发时间。
+
+5. **促进创新**：鼓励团队成员探索新技术的同时，也保障了现有系统的稳定运行。这种平衡促进了持续的技术创新，有助于企业在竞争中保持领先地位。
+
+
+
 ## 项目地址
 
 ### github地址
@@ -15,11 +35,15 @@
 
 后端地址：[https://github.com/tu-160/guituai-agent](https://github.com/tu-160/guituai-agent)
 
+低代码基础服务：[https://github.com/tu-160/guituai-cloud](https://github.com/tu-160/guituai-cloud)
+
 ### gitee地址
 
 前端地址：[https://gitee.com/dabanzong/guituai-agent-ui](https://gitee.com/dabanzong/guituai-agent-ui)
 
 后端地址：[https://gitee.com/dabanzong/guituai-agent](https://gitee.com/dabanzong/guituai-agent)
+
+低代码基础服务：[https://gitee.com/dabanzong/guituai-cloud](https://gitee.com/dabanzong/guituai-cloud)
 
 
 ## 技术栈
@@ -30,6 +54,9 @@
 - 缓存数据库：[redis](https://github.com/redis/redis/)
 
 
+### 集成（鸣谢）
+- [RAGFlow](https://github.com/infiniflow/ragflow): 是一款基于深度文档理解构建的开源 RAG 引擎。
+
 ## 商业合作
 针对上面技术，我们开发了一套商业级软件，支持代理 & 私有化部署！
 
@@ -38,12 +65,8 @@
 <img src="./docs/20250209155532.jpg" width="300" height="300" alt="描述文字">
 
 
-
 ---
 
-## 圭图AI是什么？
-
-是一款基于深度文档理解构建的开源低代码 RAG（Retrieval-Augmented Generation）引擎。可以为各种规模的企业及个人提供一套精简的 RAG 工作流程，结合大语言模型（LLM）针对用户各类不同的复杂格式数据提供可靠的问答以及有理有据的引用。
 
 ## 主要功能
 
@@ -168,11 +191,4 @@
 | OpenSearch    | ✅ 已支持  | -  |
 | ElasticSearch | ✅ 已支持  | -  |
 | Redis         | ✅ 已支持  | -  |
-
-
-
-
-## 交流微信
-
-
 
