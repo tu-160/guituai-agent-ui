@@ -9,7 +9,9 @@
   "scripts": {
     "dev": "turbo-run dev",
     "dev:aip": "pnpm -F@future/ai-platform run dev",
-    "dev:kl": "pnpm -F@future/knowledge run dev",
+    "dev:kl": "yarn run dev --filter=@future/chat-ai",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 turbo build",
+    "build:chatai": "pnpm run build --filter=@future/chat-ai",
     "clean": "node ./scripts/clean.mjs",
     "postinstall": "pnpm -r run stub --if-present",
     "prepare": "cd .. && husky future-sub-apps/.husky"
