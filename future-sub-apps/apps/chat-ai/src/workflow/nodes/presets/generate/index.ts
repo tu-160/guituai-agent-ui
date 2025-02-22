@@ -34,7 +34,7 @@ export const getDataDefault = (): IGenerateComponent => ({
     prompt: t('flow.promptText', {'input': '{input}'}),
     cite: true,
     message_history_window_size: 12,
-    llm_id: 'qwen2.5-instruct@Xinference',
+    llm_id: 'deepseek-r1-distill-qwen@Xinference',
   },
 });
 

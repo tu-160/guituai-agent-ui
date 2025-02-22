@@ -14,7 +14,6 @@ const router = createRouter({
 // 白名单
 const whitelist = new Set(['/agreement', '/chat', '/none', '/privacypolicy']);
 router.beforeEach(async (to, from, next) => {
-  debugger
 
   const userStore = useUserStore();
   const isWhitelisted = [...whitelist].some((item) => {

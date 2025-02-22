@@ -251,11 +251,11 @@ const { openPage } = useToPage();
       <div class="policy-tip">
         <span>
           以上内容均由AI生成, 仅供参考和借鉴。 &nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="https://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank"> 粤ICP备2024344803号 </a>
+<!--          <a href="https://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank"> 粤ICP备2024344803号 </a>
           &nbsp;
           <a href="/agreement" rel="noopener noreferrer" target="_blank"> 用户协议 </a>
           |
-          <a href="/privacypolicy" rel="noopener noreferrer" target="_blank"> 隐私政策 </a>
+          <a href="/privacypolicy" rel="noopener noreferrer" target="_blank"> 隐私政策 </a>-->
         </span>
       </div>
     </div>

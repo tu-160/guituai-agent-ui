@@ -22,7 +22,7 @@ export const getDataDefault = (): IKeywordComponent => ({
   component_name: `${nodeDefine.key}`,
   params: {
     frequency_penalty: 0.7,
-    llm_id: 'qwen2.5-instruct@Xinference',
+    llm_id: 'deepseek-r1-distill-qwen@Xinference',
     max_tokens: 512,
     message_history_window_size: 12,
     presence_penalty: 0.4,

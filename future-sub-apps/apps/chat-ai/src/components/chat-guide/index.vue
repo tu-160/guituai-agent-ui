@@ -25,6 +25,7 @@ const modelRef = reactive({
 });
 watchEffect(async () => {
   await C0013({ dialog_id: props.dialogId }).then((res) => {
+    debugger
     modelRef.questions = res.data.filter((item: string) => item.trim() !== '');
   });
 });

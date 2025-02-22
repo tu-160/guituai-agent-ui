@@ -55,7 +55,7 @@ const modelRef = reactive({
     stream: true, // 是否流式输出
   },
   id: '',
-  llm_id: 'qwen2.5-instruct@Xinference',
+  llm_id: 'deepseek-r1-distill-qwen@Xinference',
   default_question: ['', '', '', ''], // 预设问题
   kb_ids: [],
   dialog_id: '',
@@ -193,6 +193,7 @@ const getAgentList = async (params: any) => {
     .then(async (res) => {
       Object.assign(modelRef, res.data);
       await C0013({ dialog_id: res.data.id }).then((resp) => {
+        debugger
         modelRef.default_question = resp.data;
       });
       fileList.value = [{ url: res.data?.icon }];
@@ -560,11 +561,11 @@ onMounted(() => {
             <div class="policy-tip">
               <span>
                 以上内容均由AI生成, 仅供参考和借鉴。 &nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank"> 粤ICP备2024344803号 </a>
+<!--                <a href="https://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank"> 粤ICP备2024344803号 </a>
                 &nbsp;
                 <a href="/agreement" rel="noopener noreferrer" target="_blank"> 用户协议 </a>
                 |
-                <a href="/privacypolicy" rel="noopener noreferrer" target="_blank"> 隐私政策 </a>
+                <a href="/privacypolicy" rel="noopener noreferrer" target="_blank"> 隐私政策 </a>-->
               </span>
             </div>
           </div>
