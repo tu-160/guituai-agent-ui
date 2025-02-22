@@ -636,6 +636,7 @@ The above is the content you need to summarize.`,
   },
   message: {
     registered: 'Registered!',
+    accountExisted: 'The account already exists.',
     logout: 'logout',
     logged: 'logged!',
     pleaseSelectChunk: 'Please select chunk!',

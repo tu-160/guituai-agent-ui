@@ -104,7 +104,14 @@ const onSign = () => {
       email: modelRt.email,
     };
     await C0006(params)
-      .then(() => {
+      .then((params) => {
+        debugger
+        console.log(params)
+        if(params.msg=="账号已存在") {
+          message.success(t('message.accountExisted'));
+          modelRt.signLogin = false;
+          return;
+        }
         message.success(t('message.registered'));
         signFormRef.value.resetFields();
         modelRt.signLogin = false;

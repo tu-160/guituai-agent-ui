@@ -645,6 +645,7 @@ export default {
   },
   message: {
     registered: '注册成功',
+    accountExisted: '账号已存在',
     logout: '登出成功',
     logged: '登录成功',
     pleaseSelectChunk: '请选择解析块',
