@@ -63,7 +63,7 @@ Based on the technology, we developed a commercial-grade software that supports 
 
 Our advantages include custom industry solutions, support for user-defined agents, and leading technical solutions.
 
-<img src="./docs/20250209155532.jpg" width="300" height="300" alt="描述文字">
+<img src="./docs/20250314230602.jpg" width="300" height="300" alt="描述文字">
 
 
 ---
