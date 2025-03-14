@@ -63,7 +63,7 @@
 
 我们的优势，支持定制化行业解决方案，支持用户自定义Agent，技术方案领先。
 
-<img src="./docs/20250209155532.jpg" width="300" height="300" alt="描述文字">
+<img src="./docs/20250314230602.jpg" width="300" height="300" alt="描述文字">
 
 
 ---
